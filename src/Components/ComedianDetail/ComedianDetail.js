@@ -1,41 +1,38 @@
 import React from 'react';
 
-export default class AddComedian extends React.Component {
+export default class ComedianDetail extends React.Component {
     render() {
-        return (
-            <div>
-                <header>
-                    <h1>New Comedian</h1>
-                </header>
+        return(
+            <div className="comedianDetail">
                 <section>
                     <form id="record-comic">
-                        <div className="form-section">
-                            <label htmlFor="comic-name">Name</label>
-                            <input type="text" name="comic-name" placeholder="John Smith" required />
+                        <div className="detail-section">
+                            <label htmlFor="firstName">First Name</label>
+                            <p>First Name</p>
+                        </div>
+                        <div className="detail-section">
+                            <label htmlFor="lastName">Last Name</label>
+                            <p>Last Name</p>
                         </div>
                         <div className="form-section">
                             <label htmlFor="comic-phone">Phone</label>
-                            <input type="text" name="comic-phone" placeholder="123-456-7890" required />
+                            <p>123-456-7890</p>
                         </div>
                         <div className="form-section">
                             <label htmlFor="comic-email">Email</label>
-                            <input type="text" name="comic-email" placeholder="email@gmail.com" required />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="comic-youtube">YouTube</label>
-                            <input type="text" name="comic-youtube" placeholder="link.com" required />
+                            <p>email@gmail.com</p>
                         </div>
                         <div className="form-section">
                             <label htmlFor="bio-summary">Bio</label>
-                            <textarea name="bio-summary" rows="5" required />
+                            <p>Bio</p>
                         </div>
                         <div className="form-section">
                             <label htmlFor="note-summary">Notes</label>
-                            <textarea name="note-summary" rows="10" required></textarea>
+                            <p>Notes</p>
                         </div>
                         <div class="form-section">
                             <label htmlFor="years-experience">Years Experience</label>
-                            <input type="number" name="years-experience" placeholder="8" />
+                            <p>Years Experience</p>
                         </div>
                         <div class="form-section">
                             <p>Comedic Style</p>
@@ -65,6 +62,6 @@ export default class AddComedian extends React.Component {
                     </form>
                 </section>
             </div>
-        )
+        );
     }
 }

@@ -1,11 +1,13 @@
 import React from 'react';
+import Nav from '../Nav/Nav.js';
+import './ShowList.css';
 
 export default class ShowList extends React.Component {
     render() {
         return (
             <div>
-                <nav role="navigation">Nav</nav>
-                <main role="main">
+                <Nav />
+                <main role="main" className="listMain">
                 <header role="banner">
                     <h1>Show List</h1>
                 </header>
@@ -53,7 +55,7 @@ export default class ShowList extends React.Component {
                     <button>Delete</button>
                 </section>
                 </main>
-                <footer role="content-info">Footer</footer>
+                <footer>Footer</footer>
             </div>
 
         );

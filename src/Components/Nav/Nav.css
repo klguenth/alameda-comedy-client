@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10px;
+}

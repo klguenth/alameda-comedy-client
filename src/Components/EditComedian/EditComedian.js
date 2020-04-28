@@ -33,7 +33,7 @@ export default class EditComedian extends React.Component {
                             <label for="note-summary">Notes</label>
                             <textarea name="note-summary" rows="10" required></textarea>
                         </div>
-                        <div class="years-experience-container" class="form-section">
+                        <div class="form-section">
                             <label for="years-experience">Years Experience</label>
                             <input type="number" name="years-experience" placeholder="8" />
                         </div>
