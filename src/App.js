@@ -6,6 +6,7 @@ import AddShow from './Components/AddShow/AddShow.js';
 import EditShow from './Components/EditShow/EditShow.js';
 import AddComedian from './Components/AddComedian/AddComedian.js';
 import EditComedian from './Components/EditComedian/EditComedian.js';
+import ComedianList from './Components/ComedianList/ComedianList.js';
 import { Route } from 'react-router';
 import './App.css';
 
@@ -28,6 +29,7 @@ export default class App extends React.Component {
         <Route path='/editShow' component={EditShow} />
         <Route path='/addComedian' component={AddComedian} />
         <Route path='/editComedian' component={EditComedian} />
+        <Route path='/comedianList' component={ComedianList} />
       </>
     );
   }
@@ -35,7 +37,7 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-        <Nav />
+        <Nav loggedIn={this.state.loggedIn}/>
         <main className='app'>
           {this.renderRoutes()}
         </main>

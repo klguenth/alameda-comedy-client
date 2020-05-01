@@ -7,3 +7,28 @@
     justify-content: flex-end;
     padding: 0 10px;
 }
+
+.nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px;
+    border: 2px solid #C9C9C8;
+    border-radius: 5px;
+    background-color: #010101;
+    color: #C9C9C8;
+    margin: 5px;
+    transition: all 0.2s;
+}
+
+.nav ul li:hover {
+    border: 2px solid #FBF708;
+    color: #010101;
+}
+
+.nav ul li:visited {
+    color: #0338FF;
+}
+
+.nav ul li a {
+    text-decoration: none;
+}

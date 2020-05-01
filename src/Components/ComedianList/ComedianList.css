@@ -1,14 +1,14 @@
 * {
     box-sizing: border-box;
-    background-color: #010101;
     color: #C9C9C8;
 }
 
-.app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+.comedianListItem {
+    border: 2px solid #0338FF;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 10px;
+    width: 40%;
 }
 
 button {

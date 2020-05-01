@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
+import { Link } from 'react-router-dom';
 import './ShowList.css';
 
 export default class ShowList extends React.Component {
@@ -11,8 +12,8 @@ export default class ShowList extends React.Component {
                 <header role="banner">
                     <h1>Show List</h1>
                 </header>
-                <button>Add Show</button>
-                <section>
+                <button><Link to='/addShow'>Add Show</Link></button>
+                <section className="show">
                     <header>
                         <h2>Amateur Night</h2>
                         <p>05.20.2020</p>
@@ -26,7 +27,7 @@ export default class ShowList extends React.Component {
                     <button>Edit</button>
                     <button>Delete</button>
                 </section>
-                <section>
+                <section className="show">
                     <header>
                     <h2>Pro Showcase</h2>
                     <p>6.12.2020</p>
@@ -40,7 +41,7 @@ export default class ShowList extends React.Component {
                     <button>Edit</button>
                     <button>Delete</button>
                 </section>
-                <section>
+                <section className="show">
                     <header>
                     <h2>Variety Show</h2>
                     <p>7.11.2020</p>
@@ -57,7 +58,6 @@ export default class ShowList extends React.Component {
                 </main>
                 <footer>Footer</footer>
             </div>
-
         );
     }
 }

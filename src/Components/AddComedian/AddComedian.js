@@ -33,29 +33,29 @@ export default class AddComedian extends React.Component {
                             <label htmlFor="note-summary">Notes</label>
                             <textarea name="note-summary" rows="10" required></textarea>
                         </div>
-                        <div class="form-section">
+                        <div className="form-section">
                             <label htmlFor="years-experience">Years Experience</label>
                             <input type="number" name="years-experience" placeholder="8" />
                         </div>
-                        <div class="form-section">
+                        <div className="form-section">
                             <p>Comedic Style</p>
-                            <input type="radio" name="comedy-type" value="0" class="comedy-type-radio" checked/>
+                            <input type="radio" name="comedy-type" value="0" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Anecdotal</span>
                             </label>
-                            <input type="radio" name="comedy-type" value="1" class="comedy-type-radio"/>
+                            <input type="radio" name="comedy-type" value="1" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Deadpan</span>
                             </label>
-                            <input type="radio" name="comedy-type" value="2" class="comedy-type-radio"/>
+                            <input type="radio" name="comedy-type" value="2" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Improvisational</span>
                             </label>
-                            <input type="radio" name="comedy-type" value="3" class="comedy-type-radio"/>
+                            <input type="radio" name="comedy-type" value="3" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Wit/Word Play</span>
                             </label>
-                            <input type="radio" name="comedy-type" value="4" class="comedy-type-radio"/>
+                            <input type="radio" name="comedy-type" value="4" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Observational</span>
                             </label>

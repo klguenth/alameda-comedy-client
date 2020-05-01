@@ -28,7 +28,6 @@ export default class LandingPage extends React.Component {
                             <button type='submit'>Sign In</button>
                         </form>
                     </section>
-                    <footer>Footer</footer>
                 </div>
             </>
         )
