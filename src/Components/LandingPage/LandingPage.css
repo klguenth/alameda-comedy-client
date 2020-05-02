@@ -8,3 +8,22 @@
     align-items: center;
     text-align: center;
 }
+
+.signup-form {
+    margin: auto;
+}
+
+.signup-form label {
+    float: left;
+    padding-left: 50px;
+}
+
+.signup-form input {
+    float: right;
+    margin: 0 100px;
+}
+
+.signup-form button {
+    align-items: center;
+    margin: 10px 100px;
+}

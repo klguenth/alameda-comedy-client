@@ -1,0 +1,23 @@
+.record-show {
+    margin: 10px auto;
+}
+
+.form-section {
+    text-align: left;
+    padding: 5px;
+}
+
+.form-section label {
+    padding-right: 5px;
+}
+
+.form-section input {
+    float: right;
+    width: 300px;
+    margin-right: 20px;
+}
+
+.form-section textarea {
+    display: block;
+    width: 460px;
+}

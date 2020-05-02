@@ -9,11 +9,6 @@
     text-align: center;
 }
 
-button:hover {
-    background-color: #FBF708;
-    color: #010101;
-}
-
 section {
     border: 2px solid #0338FF;
     border-radius: 5px;

@@ -7,8 +7,12 @@
     border: 2px solid #0338FF;
     border-radius: 5px;
     padding: 30px;
-    margin: 10px;
+    margin: 10px auto;
     width: 40%;
+}
+
+ul {
+    list-style-type: none;
 }
 
 button {
@@ -18,5 +22,7 @@ button {
     border: 1px solid #C9C9C8;
     border-radius: 5px;
     padding: 5px;
-    margin: 3px;
 }
+ button:hover {
+    border: 1px solid #FBF708;
+ }

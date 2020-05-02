@@ -1,4 +1,5 @@
 import React from 'react';
+import './AddShow.css';
 
 export default class AddShow extends React.Component {
     render() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './AddComedian.css';
 
 export default class AddComedian extends React.Component {
     render() {
@@ -7,8 +8,8 @@ export default class AddComedian extends React.Component {
                 <header>
                     <h1>New Comedian</h1>
                 </header>
-                <section>
-                    <form id="record-comic">
+                <section className="record-comic">
+                    <form>
                         <div className="form-section">
                             <label htmlFor="comic-name">Name</label>
                             <input type="text" name="comic-name" placeholder="John Smith" required />
@@ -39,26 +40,31 @@ export default class AddComedian extends React.Component {
                         </div>
                         <div className="form-section">
                             <p>Comedic Style</p>
+
                             <input type="radio" name="comedy-type" value="0" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Anecdotal</span>
-                            </label>
+                            </label><br />
+
                             <input type="radio" name="comedy-type" value="1" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Deadpan</span>
-                            </label>
+                            </label><br />
+
                             <input type="radio" name="comedy-type" value="2" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Improvisational</span>
-                            </label>
+                            </label><br />
+
                             <input type="radio" name="comedy-type" value="3" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Wit/Word Play</span>
-                            </label>
+                            </label><br />
+
                             <input type="radio" name="comedy-type" value="4" className="comedy-type-radio"/>
                             <label htmlFor="comedy-type">
                                 <span>Observational</span>
-                            </label>
+                            </label><br />
                         </div>
                         <button type="submit">Submit</button>
                         <button type="reset">Reset</button>

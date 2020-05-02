@@ -1,6 +1,6 @@
 import React from 'react';
-import ComedianDetail from '../ComedianDetail/ComedianDetail.js';
 import { Link } from 'react-router-dom';
+import './ComedianList.css';
 
 export default class ComedianList extends React.Component {
     render() {
@@ -18,14 +18,15 @@ export default class ComedianList extends React.Component {
                 </li>
             )
             return (
-                <>
+                <div className='comedianListMain'>
                     <header className='listHeader'>
-                    Comedian List
+                        <h1>Comedians</h1>
                     </header>
+                    <button><Link to='/addComedian'>Add Comedian</Link></button>
                     <ul className='listContainer'>
                         {comedian}
                     </ul>
-                </>
+                </div>
             );
     }
 }
