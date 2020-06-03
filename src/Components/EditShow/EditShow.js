@@ -4,7 +4,6 @@ export default class EditShow extends React.Component {
     render() {
         return (
             <div>
-                <nav role="navigation">Nav</nav>
                 <header>
                     <h1>Edit Show</h1>
                 </header>

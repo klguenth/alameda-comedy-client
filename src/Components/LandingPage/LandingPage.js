@@ -21,10 +21,12 @@ export default class LandingPage extends React.Component {
                     <section>
                         <h2>Login</h2>
                         <form className='signup-form'>
+                            <label htmlFor="name">Full Name</label>
+                            <input type="text" name="fullname" id="fullname" /><br />
                             <label htmlFor="username">Email</label>
-                            <input type="text" name='username' id='username' /><br />
+                            <input type="text" name="username" id="username" /><br />
                             <label htmlFor="password">Password</label>
-                            <input type="password" name='password' id='password' /><br />
+                            <input type="password" name="password" id="password" /><br />
                             <button type='submit'>Sign In</button>
                         </form>
                     </section>
