@@ -28,8 +28,8 @@ export default class ComedianList extends React.Component {
         }
     }
     render() {
-        let comedian = this.state.comedians.map((comedian => 
-            <li>
+        let comedian = this.state.comedians.map((comedian,index) => 
+            <li key={index}>
                 {comedian.firstname}
                 {comedian.lastname}
                 {comedian.phone}
@@ -37,7 +37,7 @@ export default class ComedianList extends React.Component {
                 <button><Link to={`/comedianDetail`} className='editButton' aria-label='edit button'>Edit</Link></button>
                 <button className='deleteButton' type='button' aria-label='delete button'>Delete</button>
             </li>
-            ))
+            );
             return (
                 <div className='comedianListMain'>
                     <header className='listHeader'>

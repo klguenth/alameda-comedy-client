@@ -3,7 +3,13 @@
     "alias": "klguenth-alameda-app",
     "name": "alameda-app",
     "routes": [
-        { "handle": "filesystem" },
-        { "src": "/.*", "dest": "/index.html" }
-    ]
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }
+      ]
   }

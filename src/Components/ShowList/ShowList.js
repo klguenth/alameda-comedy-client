@@ -29,8 +29,8 @@ export default class ShowList extends React.Component {
         }
     }
     render() {
-        let shows = this.state.shows.map((show => 
-            <li>
+        let shows = this.state.shows.map((show, index) => 
+            <li key={index}>
                 {show.day}
                 {show.date}
                 {show.time}
@@ -38,7 +38,7 @@ export default class ShowList extends React.Component {
                 <button><Link to={`/editShow`} className='editButton' aria-label='edit button'>Edit</Link></button>
                 <button className='deleteButton' type='button' aria-label='delete button'>Delete</button>
             </li>
-            ))
+            );
         return (
             <div>
                 <Nav />

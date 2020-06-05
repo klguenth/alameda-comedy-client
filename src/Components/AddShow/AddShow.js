@@ -94,6 +94,15 @@ export default class AddShow extends React.Component {
                         <button type="submit">Submit</button>
                     </form>
                 </section> 
+                <header>
+                    <h1>Comic Search</h1>
+                </header>
+                <section className="record-show">
+                    <form>
+                        <input type="text" placeholder="Search.." name="search" />
+                        <button type="submit">Submit</button>
+                    </form>
+                </section> 
             </div>
         )
     }
