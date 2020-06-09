@@ -1,7 +1,52 @@
 import React from 'react';
+import config from '../../config.js';
+import ApiContext from '../../ApiContext.js';
 import './AddShow.css';
 
 export default class AddShow extends React.Component {
+
+    static defaultProprs = {
+        addShow: () => {},
+    }
+    static contextType = ApiContext;
+
+//add show to show list
+    handleAddShow = event => {
+        event.preventDefault()
+        const newShow = {};
+        newShow.title = event.target.title.value;
+        newShow.show_date = event.target.show_date.value;
+        newShow.show_time = event.target.show_time.value;
+        newShow.comics = event.target.comics.value;
+        newShow.stage = event.target.state.value;
+        newShow.details = event.target.details.value;
+        newShow.notes = event.target.notes.value;
+        newShow.generalPrice = event.target.generalPrice.value;
+        newShow.premiumPrice = event.target.premiumPrice.value;
+        newShow.capacity = event.target.capacity.value;
+        newShow.comps = event.target.comps.value;
+
+    fetch(`${config.REACT_APP_API_ENDPOINT}/api/show`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(newShow)
+        })
+        .then(res => {
+            if (!res.ok)
+                return res.json().then(e => Promise.reject(e))
+            return res.json()
+        })
+        .then((res) => {
+            this.props.history.push(`/showList`)
+            window.location.reload()
+        })
+        .catch(error => {
+            console.error({ error })
+        });
+    }
+
     render() {
         return (
             <div>
@@ -9,21 +54,21 @@ export default class AddShow extends React.Component {
                     <h1>New Show</h1>
                 </header>
                 <section className="record-show">
-                    <form>
+                    <form onSubmit={this.handleAddShow}>
                         <div className="form-section">
-                            <label htmlFor="show-name">Name</label>
+                            <label htmlFor="show-name">Title</label>
                             <input type="text" name="show-name" placeholder="Amateur Night" required />
                         </div>
                         <div className="form-section">
                             <label htmlFor="date">Date</label>
-                            <input type="date" id="date" name="show-date" min="2020-04-25" max="2050-01-01" />
+                            <input type="date" id="date" name="show-date" min="2020-04-25" max="2050-01-01" required/>
                         </div>
                         <div className="form-section">
                             <label htmlFor="time">Time</label>
-                            <input type="time" id="default-picker" className="time-picker" min="12:00" max="11:00" placeholder="Select time" />
+                            <input type="time" id="default-picker" className="time-picker" min="12:00" max="23:00" placeholder="Select time" required/>
                         </div>
                         <div className="form-section">
-                            <label htmlFor="form-section">Comics</label>
+                            <label htmlFor="comics">Comics</label>
                             <input type="text" placeholder="Search" />
                         </div>
                         <div className="form-section">
