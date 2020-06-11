@@ -25,7 +25,7 @@ export default class App extends React.Component {
 
   //performs initial fetch of sightings
   componentDidMount() {
-    fetch(`${config.REACT_APP_API_ENDPOINT}api/show/`)
+    fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/`)
       .then(res => {
         if(!res.ok) {
           throw new Error('Something went wrong.');

@@ -69,13 +69,13 @@ export default class AddShow extends React.Component {
                         </div>
                         <div className="form-section">
                             <label htmlFor="comics">Comics</label>
-                            <input type="text" placeholder="Search" name="comics" id="comics" />
+                            <input type="number" placeholder="Search" name="comics" id="comics"/>
                         </div>
                         <div className="form-section">
                         <label htmlFor="stage">Stage</label>
                             <select name="stage" id="stage">
-                                <option value="Patio">Patio</option>
-                                <option value="Showroom">Showroom</option>
+                                <option value="patio">patio</option>
+                                <option value="showroom">showroom</option>
                             </select>
                         </div>
                         <div className="form-section">
