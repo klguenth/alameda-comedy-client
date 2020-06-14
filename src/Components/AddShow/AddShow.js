@@ -5,7 +5,7 @@ import './AddShow.css';
 
 export default class AddShow extends React.Component {
 
-    static defaultProprs = {
+    static defaultProps = {
         addShow: () => {},
     }
     static contextType = ApiContext;

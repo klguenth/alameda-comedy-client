@@ -8,6 +8,7 @@ import AddComedian from './Components/AddComedian/AddComedian.js';
 import EditComedian from './Components/EditComedian/EditComedian.js';
 import ComedianList from './Components/ComedianList/ComedianList.js';
 import ApiContext from './ApiContext';
+import { findComedian, findShow } from './helpers.js';
 import config from './config.js';
 import { Route } from 'react-router';
 import './App.css';
@@ -19,11 +20,12 @@ export default class App extends React.Component {
     super(props)
     this.state = {
       loggedIn: true,
-      shows: []
+      shows: [],
+      comedians: []
     };
   }
 
-  //performs initial fetch of sightings
+  //performs initial fetch of shows
   componentDidMount() {
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/`)
       .then(res => {
@@ -60,10 +62,51 @@ export default class App extends React.Component {
       </>
     );
   }
+
+  //sets state for comedian edits
+  handleEditComedian = (comedian) => {
+    const index = findComedian(this.state.comedians, comedian.id);
+    const comedians = this.state.comedians;
+    this.setState = ({
+      comedians: comedians.splice(index, 1, comedian)
+    })
+  }
+
+//sets state for comedian delete
+  handleDeleteComedian = (comedian) => {
+    const index = findComedian(this.state.comedians, comedian);
+    const comedians = this.state.comedians;
+    this.setState = ({
+      comedians: comedians.splice(index, 1)
+    })
+  }
+
+//sets state for show edits
+  handleEditShow = (show) => {
+    const index = findShow(this.state.shows, show.id);
+    const shows = this.state.shows;
+    this.setState = ({
+      shows: shows.splice(index, 1, show)
+    })
+  }
+  
+//sets state for show delete
+  handleDeleteShow = (show) => {
+    const index = findShow(this.state.shows, show);
+    const shows = this.state.shows;
+    this.setState = ({
+      shows: shows.splice(index, 1)
+    })
+  }
   
   render() {
     const value = {
       shows: this.state.shows,
+      comedians: this.state.comedians,
+      deleteComedian: this.handleDeleteComedian,
+      editComedian: this.handleEditComedian,
+      deleteShow: this.handleDeleteShow,
+      editShow: this.handleEditShow
     }
     return (
       <ApiContext.Provider value={value}>

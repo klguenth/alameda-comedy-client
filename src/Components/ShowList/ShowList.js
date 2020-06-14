@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
+import config from '../../config.js';
 import { Link } from 'react-router-dom';
 import './ShowList.css';
 
@@ -7,27 +8,34 @@ export default class ShowList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            shows: [
-                {
-                    day: 'Tuesday',
-                    date: '5/20/2020',
-                    time: '7:00 PM',
-                    title: 'Open Mic'
-                },
-                {
-                    day: 'Tuesday',
-                    date: '5/20/2020',
-                    time: '9:00 PM',
-                    title: 'Auditions'
-                },                {
-                    day: 'Thursday',
-                    date: '5/22/2020',
-                    time: '7:00 PM',
-                    title: 'Showcase'
-                },
-            ]
+            shows: [],
         }
     }
+    
+//performs initial fetch of shows
+  componentDidMount() {
+    fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/`)
+      .then(res => {
+        if(!res.ok) {
+          throw new Error('Something went wrong.');
+        }
+        return res;
+
+      })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          shows: data,
+          error: null
+        });
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
+      });
+  }
+
     render() {
         let shows = this.state.shows.map((show, index) => 
             <li key={index}>
@@ -36,7 +44,6 @@ export default class ShowList extends React.Component {
                 {show.time}
                 {show.title}
                 <button><Link to={`/editShow`} className='editButton' aria-label='edit button'>Edit</Link></button>
-                <button className='deleteButton' type='button' aria-label='delete button'>Delete</button>
             </li>
             );
         return (

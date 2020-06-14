@@ -1,6 +1,42 @@
 import React from 'react';
+import config from '../../config.js';
+import ApiContext from '../../ApiContext.js';
 
 export default class ComedianDetail extends React.Component {
+
+    static defaultProps = {
+        onDeleteComedian: () => {},
+        onEditComedian: () => {},
+        match: {
+            params: {}
+        }
+    }
+    static contextType = ApiContext;
+
+    //delete comedian from comedian list
+    handleDeleteComedian = e => {
+        e.preventDefault()
+        const comedianId = this.props.comedian.id;
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian/${comedianId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json'
+            },
+        })
+        .then( res => {
+            if (!res.ok)
+                return res.json().then(e => Promise.reject(e))
+            return res;
+        })
+        .then(() => {
+            this.context.deleteComedian(comedianId);
+            this.props.history.push('/comedianList')
+        })
+        .catch(error => {
+            console.error({ error })
+        })
+    }
+
     render() {
         return(
             <div className="comedianDetail">

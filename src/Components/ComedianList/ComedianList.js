@@ -1,32 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../config.js';
 import './ComedianList.css';
 
 export default class ComedianList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            comedians: [
-                {
-                    firstname: 'John',
-                    lastname: 'Smith',
-                    phone: '123-456-7890',
-                    email: 'johnsmith@email.com'
-                },
-                {
-                    firstname: 'John',
-                    lastname: 'Doe',
-                    phone: '987-654-3210',
-                    email: 'johndoe@email.com'
-                },                {
-                    firstname: 'Jane',
-                    lastname: 'Doe',
-                    phone: '123-987-4567',
-                    email: 'janedoe@email.com'
-                },
-            ]
+            comedians: [],
         }
     }
+
+//performs initial fetch of comedians
+  componentDidMount() {
+    fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian/`)
+      .then(res => {
+        if(!res.ok) {
+          throw new Error('Something went wrong.');
+        }
+        return res;
+
+      })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          comedians: data,
+          error: null
+        });
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
+      });
+  }
+
     render() {
         let comedian = this.state.comedians.map((comedian,index) => 
             <li key={index}>
@@ -35,7 +43,6 @@ export default class ComedianList extends React.Component {
                 {comedian.phone}
                 {comedian.email}
                 <button><Link to={`/comedianDetail`} className='editButton' aria-label='edit button'>Edit</Link></button>
-                <button className='deleteButton' type='button' aria-label='delete button'>Delete</button>
             </li>
             );
             return (
