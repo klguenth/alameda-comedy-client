@@ -55,7 +55,7 @@ export default class App extends React.Component {
         <Route exact path='/' component={LandingPage} />
         <Route path='/showList' component={ShowList} shows={this.state.shows} />
         <Route path='/addShow' component={AddShow} />
-        <Route path='/editShow' component={EditShow} />
+        <Route path='/editShow' render={(props) => <EditShow {...props} />} />
         <Route path='/addComedian' component={AddComedian} />
         <Route path='/editComedian' component={EditComedian} />
         <Route path='/comedianList' component={ComedianList} />

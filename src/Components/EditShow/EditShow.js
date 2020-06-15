@@ -63,12 +63,15 @@ export default class EditShow extends React.Component {
             if (parseInt(id) === this.context.shows[i].id) {
                 return i;
             }
+            console.log(id, 'findbyid id');
+            console.log(parseInt(id), 'parseint')
         }
     }
 
     render() {
         let id = this.props.match.params.id;
         let index = this.findById(id)
+        console.log(index, 'index');
         return (
             <ApiContext.Consumer>
                 {defaultValue => (
