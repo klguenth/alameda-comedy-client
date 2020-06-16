@@ -9,7 +9,7 @@ export default class LandingPage extends React.Component {
                 <Nav />
                 <div className="landingContainer">
                     <header role="banner">
-                        <h1>Alameda Comedy</h1>
+                        <h1>Alameda Comedy Club</h1>
                     </header>
                     <section>
                         <h2>A management tool for your hospitality and entertainment venue.</h2>
