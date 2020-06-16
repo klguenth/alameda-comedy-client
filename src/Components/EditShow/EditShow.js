@@ -59,6 +59,8 @@ export default class EditShow extends React.Component {
     }
 
     findById(id) {
+        console.log(typeof id, id, 'type of id');
+        console.log(this.context.shows, 'this.context.shows');
         for (let i = 0; i<this.context.shows.length; i++) {
             if (parseInt(id) === this.context.shows[i].id) {
                 return i;
