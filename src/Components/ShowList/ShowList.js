@@ -39,11 +39,10 @@ export default class ShowList extends React.Component {
     render() {
         let shows = this.state.shows.map((show, index) => 
             <li key={index}>
-                {show.day}
-                {show.date}
-                {show.time}
-                {show.title}
-                <button><Link to={`/editShow`} className='editButton' aria-label='edit button'>Edit</Link></button>
+              {show.title}<br />
+              {show.show_date.slice(0, 10)}<br />
+              {show.show_time}<br />
+              <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
             </li>
             );
         return (

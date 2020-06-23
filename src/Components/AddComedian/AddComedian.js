@@ -181,36 +181,6 @@ export default class AddComedian extends React.Component {
                             <label htmlFor="instagram">Instagram Handle</label>
                             <input type="text" name="instagram" placeholder="@johnsmithcomedy" />
                         </div>
-
-
-                        <div className="form-section">
-                            <p>Comedic Style</p>
-
-                            <input type="radio" name="comedy-type" value="0" className="comedy-type-radio"/>
-                            <label htmlFor="comedy-type">
-                                <span>Anecdotal</span>
-                            </label><br />
-
-                            <input type="radio" name="comedy-type" value="1" className="comedy-type-radio"/>
-                            <label htmlFor="comedy-type">
-                                <span>Deadpan</span>
-                            </label><br />
-
-                            <input type="radio" name="comedy-type" value="2" className="comedy-type-radio"/>
-                            <label htmlFor="comedy-type">
-                                <span>Improvisational</span>
-                            </label><br />
-
-                            <input type="radio" name="comedy-type" value="3" className="comedy-type-radio"/>
-                            <label htmlFor="comedy-type">
-                                <span>Wit/Word Play</span>
-                            </label><br />
-
-                            <input type="radio" name="comedy-type" value="4" className="comedy-type-radio"/>
-                            <label htmlFor="comedy-type">
-                                <span>Observational</span>
-                            </label><br />
-                        </div>
                         <button type="submit">Submit</button>
                         <button type="reset">Reset</button>
                     </form>

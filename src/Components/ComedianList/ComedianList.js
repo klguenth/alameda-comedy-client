@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from '../Nav/Nav.js';
 import { Link } from 'react-router-dom';
 import config from '../../config.js';
 import './ComedianList.css';
@@ -38,22 +39,25 @@ export default class ComedianList extends React.Component {
     render() {
         let comedian = this.state.comedians.map((comedian,index) => 
             <li key={index}>
-                {comedian.firstname}
-                {comedian.lastname}
-                {comedian.phone}
-                {comedian.email}
-                <button><Link to={`/comedianDetail`} className='editButton' aria-label='edit button'>Edit</Link></button>
+                {comedian.first_name}
+                {' '}
+                {comedian.last_name}<br />
+                {comedian.phone}<br />
+                {comedian.email}<br />
+                <button><Link to={`/comedianDetail/${comedian.id}`} className='detailButton' aria-label='detail button'>Details</Link></button>
+                <button><Link to={`/editComedian/${comedian.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
             </li>
             );
             return (
                 <div className='comedianListMain'>
-                    <header className='listHeader'>
-                        <h1>Comedians</h1>
-                    </header>
-                    <button><Link to='/addComedian'>Add Comedian</Link></button>
-                    <ul className='listContainer'>
-                        {comedian}
-                    </ul>
+                  <Nav />
+                  <header className='listHeader'>
+                      <h1>Comedians</h1>
+                  </header>
+                  <button><Link to='/addComedian'>Add Comedian</Link></button>
+                  <ul className='listContainer'>
+                      {comedian}
+                  </ul>
                 </div>
             );
     }

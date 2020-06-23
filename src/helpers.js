@@ -1,5 +1,5 @@
 export const findComedian = (comedians, comedianId) => {
-    return comedians.findIndex(comedian => comedian.id === comedianId)
+    return comedians.findIndex(comedian => +comedian.id === +comedianId)
 }
 
 export const getComediansForList = (comedians=[], id) => (
