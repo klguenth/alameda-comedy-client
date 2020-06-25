@@ -111,7 +111,7 @@ export default class EditShow extends React.Component {
                                     <label htmlFor="title">Title</label>
                                     <input type="text" id="title" name="title" defaultValue={show.title} required />
                                 </div>
-                                {console.log(show.title, 'show.title')}
+                                {console.log(this.context.shows.show.title, 'show.title')}
                                 <div className="form-section">
                                     <label htmlFor="show_date">Date</label>
                                     <input type="date" id="show_date" name="show_date" min="2020-04-25" max="2050-01-01"
