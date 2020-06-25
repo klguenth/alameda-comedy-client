@@ -110,10 +110,19 @@ export default class App extends React.Component {
 //sets state for show edits
   handleEditShow = (show) => {
     const index = findShow(this.state.shows, show.id);
+    // console.log('index', index);
+    // const shows = [...this.state.shows];
+    // console.log('shows before setState', shows);
     const shows = [...this.state.shows];
+    const updatedShows = shows.splice(index, 1, show);
     this.setState ({
-      shows: shows.splice(index, 1, show)
+      shows: updatedShows
     })
+    console.log('after setSTate', shows)
+    // this.setState ({
+    //   shows: shows.splice(index, 1, show)
+    // })
+    // console.log('shows after setState', shows);
   }
   
 //sets state for show delete
