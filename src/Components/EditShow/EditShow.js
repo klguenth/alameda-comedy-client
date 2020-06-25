@@ -96,7 +96,8 @@ export default class EditShow extends React.Component {
 
     render() {
         let id = this.props.match.params.id;
-        let index = this.findById(id)
+        // let index = this.findById(id)
+        const show = this.context.shows.find((show) => show.id === this.props.match.params.id)
         return (
             <ApiContext.Consumer>
                 {defaultValue => (
@@ -108,54 +109,54 @@ export default class EditShow extends React.Component {
                             <form onSubmit={this.handleEditShow}>
                                 <div className="form-section">
                                     <label htmlFor="title">Title</label>
-                                    <input type="text" id="title" name="title" defaultValue={this.context.shows[index].title} required />
+                                    <input type="text" id="title" name="title" defaultValue={show.title} required />
                                 </div>
-                                {console.log(this.context.shows[index].title, 'title')}
+                                {console.log(show.title, 'show.title')}
                                 <div className="form-section">
                                     <label htmlFor="show_date">Date</label>
                                     <input type="date" id="show_date" name="show_date" min="2020-04-25" max="2050-01-01"
-                                        defaultValue={this.context.shows[index].show_date.slice(0, 10)} required/>
+                                        defaultValue={show.show_date.slice(0, 10)} required/>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="show_time">Time</label>
-                                    <input type="time" id="show_time" name="show_time" min="12:00" max="23:00" defaultValue={this.context.shows[index].show_time} required/>
+                                    <input type="time" id="show_time" name="show_time" min="12:00" max="23:00" defaultValue={show.show_time} required/>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="comics">Comics</label>
-                                    <input type="number" defaultValue={this.context.shows[index].comics} name="comics" id="comics"/>
+                                    <input type="number" defaultValue={show.comics} name="comics" id="comics"/>
                                 </div>
                                 <div className="form-section">
                                 <label htmlFor="stage">Stage</label>
-                                    <select name="stage" id="stage" defaultValue={this.context.shows[index].stage}>
+                                    <select name="stage" id="stage" defaultValue={show.stage}>
                                         <option value="patio">patio</option>
                                         <option value="showroom">showroom</option>
                                     </select>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="details">Details</label>
-                                    <input type="text" id="details" name="details" defaultValue={this.context.shows[index].details} required />
+                                    <input type="text" id="details" name="details" defaultValue={show.details} required />
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="notes">Notes</label>
-                                    <textarea name="notes" rows="10" id="notes" defaultValue={this.context.shows[index].notes} required></textarea>
+                                    <textarea name="notes" rows="10" id="notes" defaultValue={show.notes} required></textarea>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="price_general">General Price</label>
                                     <input type="number" min="1" step="any" name="price_general" id="price_general"
-                                        defaultValue={Number(this.context.shows[index].price_general.slice(1))} />
+                                        defaultValue={Number(show.price_general.slice(1))} />
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="price_premium">Premium Price</label>
                                     <input type="number" min="1" step="any" name="price_premium" id="price_premium"
-                                        defaultValue={Number(this.context.shows[index].price_premium.slice(1))} />
+                                        defaultValue={Number(show.price_premium.slice(1))} />
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="capacity">Capacity</label>
-                                    <input type="number" min="1" step="any" name="capacity" id="capacity" defaultValue={this.context.shows[index].capacity} />
+                                    <input type="number" min="1" step="any" name="capacity" id="capacity" defaultValue={show.capacity} />
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="comps">Comps</label>
-                                    <input type="number" min="1" step="any" name="comps" id="comps" defaultValue={this.context.shows[index].comps} />
+                                    <input type="number" min="1" step="any" name="comps" id="comps" defaultValue={show.comps} />
                                 </div>
                                 <button type="reset">Reset</button>
                                 <button type="submit">Submit</button>
