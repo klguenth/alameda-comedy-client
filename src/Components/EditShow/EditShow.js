@@ -110,6 +110,7 @@ export default class EditShow extends React.Component {
         // let id = this.props.match.params.id;
         // let index = this.findById(id)
         // const show = this.context.shows.find((show) => show.id === this.props.match.params.id)
+        // return (
             <ApiContext.Consumer>
                 {defaultValue => (
                     <div>
