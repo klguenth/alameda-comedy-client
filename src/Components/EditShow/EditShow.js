@@ -26,6 +26,7 @@ export default class EditShow extends React.Component {
         const id = this.props.match.params.id;
         const index = this.findById(parseInt(id));
         const showId = this.context.shows[index].id;
+        console.log('ids', id, index, showId);
         const modifiedShow = {};
         modifiedShow.title = event.target.title.value;
         modifiedShow.show_date = event.target.show_date.value;
@@ -45,7 +46,7 @@ export default class EditShow extends React.Component {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(modifiedShow),
-            })
+        })
         .then(res => {
             if (!res.ok) {
                 console.log('error')
@@ -54,7 +55,7 @@ export default class EditShow extends React.Component {
         })
         .then((res) => {
             modifiedShow.id = id;
-            this.context.editShow(modifiedShow)
+            // this.context.editShow(modifiedShow)
             this.props.history.push(`/showList`);
         })
         .catch(error => {
@@ -95,24 +96,26 @@ export default class EditShow extends React.Component {
     }
 
     render() {
-        const show = this.context.shows.find(
-            // converts both sides to integers
-            show => +show.id === +this.props.match.params.id
-        );
-    
+        // const show = this.context.shows.find(
+        //     // converts both sides to integers
+        //     show => +show.id === +this.props.match.params.id
+        // );
+        console.log('this.props.match', this.props.match.params.id);
+        console.log('this.context.shows', this.context.shows);
         //  Technically the better way would be to have a marker called isFetching 
         // and display the appropriate content based on it because if there were legitimately no shows, the user would just have a blank screen.
-        if (this.context.shows.length === 0) {
-            return null;
-        }
-    
+        // if (this.context.shows.length === 0) {
+        //     return null;
+        // }
+        const show = this.context.shows.find((show) => 
+            +show.id == +this.props.match.params.id)
+            console.log('show', show);
         return (
         // let id = this.props.match.params.id;
         // let index = this.findById(id)
-        // const show = this.context.shows.find((show) => show.id === this.props.match.params.id)
-        // return (
-            <ApiContext.Consumer>
-                {defaultValue => (
+
+            // <ApiContext.Consumer>
+            //     {defaultValue => (
                     <div>
                         <header>
                             <h1>Edit Show</h1>
@@ -123,7 +126,6 @@ export default class EditShow extends React.Component {
                                     <label htmlFor="title">Title</label>
                                     <input type="text" id="title" name="title" defaultValue={show.title} required />
                                 </div>
-                                {console.log(this.context.shows.show.title, 'show.title')}
                                 <div className="form-section">
                                     <label htmlFor="show_date">Date</label>
                                     <input type="date" id="show_date" name="show_date" min="2020-04-25" max="2050-01-01"
@@ -176,8 +178,8 @@ export default class EditShow extends React.Component {
                             </form>
                         </section>
                     </div>
-                )}
-            </ApiContext.Consumer>
+            //     )}
+            // </ApiContext.Consumer>
         );
     }
 }

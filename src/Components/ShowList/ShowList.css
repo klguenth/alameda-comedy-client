@@ -24,4 +24,5 @@ section {
 .show ul {
     justify-content: center;
     margin: 30px;
+    padding: 0px;
 }
