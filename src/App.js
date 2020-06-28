@@ -114,19 +114,9 @@ export default class App extends React.Component {
     console.log('shows', shows);
     shows[index] = show
     this.setState ({
-      shows
+      shows: shows
     })
-
-    // const shows = [...this.state.shows];
-    // const shows = [...this.state.shows];
-    // const updatedShows = shows;
-    // this.setState ({
-    //   shows: updatedShows
-    // })
-    console.log('after setState', shows)
-    // this.setState ({
-    //   shows: shows.splice(index, 1, show)
-    // })
+    console.log('after setState', this.state.shows)
   }
   
 //sets state for show delete

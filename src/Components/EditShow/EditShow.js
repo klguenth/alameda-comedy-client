@@ -112,8 +112,8 @@ export default class EditShow extends React.Component {
         // let id = this.props.match.params.id;
         // let index = this.findById(id)
 
-            // <ApiContext.Consumer>
-            //     {defaultValue => (
+            <ApiContext.Consumer>
+                {defaultValue => (
                     <div>
                         <header>
                             <h1>Edit Show</h1>
@@ -176,8 +176,8 @@ export default class EditShow extends React.Component {
                             </form>
                         </section>
                     </div>
-            //     )}
-            // </ApiContext.Consumer>
+                )}
+            </ApiContext.Consumer>
         );
     }
 }
