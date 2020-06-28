@@ -49,10 +49,11 @@ export default class EditShow extends React.Component {
         .then(res => {
             if (!res.ok) {
                 console.log('error')
-            return res.json();
             }
+            return res.json();
         })
         .then((res) => {
+            console.log('res', res);
             modifiedShow.id = id;
             this.context.editShow(modifiedShow)
             this.props.history.push(`/showList`);
