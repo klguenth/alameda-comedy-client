@@ -61,7 +61,6 @@ export default class ShowList extends React.Component {
             <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
           </li>
           );
-          console.log(this.context.shows, 'this.context.shows');
         return (
           <ApiContext.Consumer>
             {defaultValue => (

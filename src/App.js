@@ -114,6 +114,7 @@ export default class App extends React.Component {
     // const shows = [...this.state.shows];
     // console.log('shows before setState', shows);
     const shows = [...this.state.shows];
+    console.log('shows', shows);
     const updatedShows = shows.splice(index, 1, show);
     this.setState ({
       shows: updatedShows
