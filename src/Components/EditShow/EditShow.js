@@ -26,7 +26,6 @@ export default class EditShow extends React.Component {
         const id = this.props.match.params.id;
         const index = this.findById(parseInt(id));
         const showId = this.context.shows[index].id;
-        console.log('ids', id, index, showId);
         const modifiedShow = {};
         modifiedShow.title = event.target.title.value;
         modifiedShow.show_date = event.target.show_date.value;
@@ -55,7 +54,7 @@ export default class EditShow extends React.Component {
         })
         .then((res) => {
             modifiedShow.id = id;
-            // this.context.editShow(modifiedShow)
+            this.context.editShow(modifiedShow)
             this.props.history.push(`/showList`);
         })
         .catch(error => {
@@ -100,8 +99,7 @@ export default class EditShow extends React.Component {
         //     // converts both sides to integers
         //     show => +show.id === +this.props.match.params.id
         // );
-        console.log('this.props.match', this.props.match.params.id);
-        console.log('this.context.shows', this.context.shows);
+
         //  Technically the better way would be to have a marker called isFetching 
         // and display the appropriate content based on it because if there were legitimately no shows, the user would just have a blank screen.
         // if (this.context.shows.length === 0) {
@@ -109,7 +107,6 @@ export default class EditShow extends React.Component {
         // }
         const show = this.context.shows.find((show) => 
             +show.id == +this.props.match.params.id)
-            console.log('show', show);
         return (
         // let id = this.props.match.params.id;
         // let index = this.findById(id)
