@@ -46,12 +46,14 @@ export default class ComedianDetail extends React.Component {
     }
 
     render() {
-        let id = this.props.match.params.id;
-        let index = this.findById(id)
-        let comedian = this.context.comedians[index];
-        if (!this.context.comedians.length) {
-            return <p>Loading...</p>;
-        }
+        const comedian = this.context.comedians.find((comedian) =>
+        +comedian.id == +this.props.match.params.id)
+        // let id = this.props.match.params.id;
+        // let index = this.findById(id)
+        // let comedian = this.context.comedians[index];
+        // if (!this.context.comedians.length) {
+        //     return <p>Loading...</p>;
+        // }
         return (
             <ApiContext.Consumer>
                 {defaultValue => (
@@ -60,88 +62,88 @@ export default class ComedianDetail extends React.Component {
                             <form id="record-comic">
                                 <div className="detail-section">
                                     <label htmlFor="firstName">Name:</label>
-                                    <p>{defaultValue=this.context.comedians[index].first_name}{' '}{defaultValue=this.context.comedians[index].last_name} </p>
+                                    <p>{defaultValue=comedian.first_name}{' '}{defaultValue=comedian.last_name} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="comic-phone">Phone:</label>
-                                    <p>{defaultValue=this.context.comedians[index].phone} </p>
+                                    <p>{defaultValue=comedian.phone} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="comic-email">Email:</label>
-                                    <p>{defaultValue=this.context.comedians[index].email} </p>
+                                    <p>{defaultValue=comedian.email} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="bio-summary">Bio:</label>
-                                    <p>{defaultValue=this.context.comedians[index].bio} </p>
+                                    <p>{defaultValue=comedian.bio} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="note-summary">Notes:</label>
-                                    <p>{defaultValue=this.context.comedians[index].notes} </p>
+                                    <p>{defaultValue=comedian.notes} </p>
                                 </div>
                                 <div className="form-section">
                                 <label htmlFor="form-section">Category</label>
-                                    <p>{defaultValue=this.context.comedians[index].category}</p>
+                                    <p>{defaultValue=comedian.category}</p>
                                 </div>
                                 <div className="form-section">
                                 <label htmlFor="form-section">Gender</label>
-                                    <p>{defaultValue=this.context.comedians[index].gender}</p>
+                                    <p>{defaultValue=comedian.gender}</p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="age">Age</label>
-                                    <p>{defaultValue=this.context.comedians[index].age} </p>
+                                    <p>{defaultValue=comedian.age} </p>
                                 </div>
                                 <div className="form-section">
                                 <label htmlFor="race">Race</label>
-                                    <p>{defaultValue=this.context.comedians[index].race}</p>
+                                    <p>{defaultValue=comedian.race}</p>
                                 </div>
                                 <div className="form-section">
                                     <p>Passed vs. Not Passed</p>
-                                    <input type="radio" name="passed" value="0" className="passed" defaultChecked={this.context.comedians[index].passed === true}/>
+                                    <input type="radio" name="passed" value="0" className="passed" defaultChecked={comedian.passed === true}/>
                                         <label htmlFor="passed">
                                             <span>Passed</span>
                                         </label><br />
-                                    <input type="radio" name="not-passed" value="0" className="not-passed" defaultChecked={this.context.comedians[index].passed === false}/>
+                                    <input type="radio" name="not-passed" value="0" className="not-passed" defaultChecked={comedian.passed === false}/>
                                         <label htmlFor="not-passed">
                                             <span>Not Passed</span>
                                     </label><br />
                                 </div>
                                 <div className="form-section">
                                     <p>Clean vs. Explicit</p>
-                                    <input type="radio" name="clean" className="clean" value="1" defaultChecked={this.context.comedians[index].clean === true} />
+                                    <input type="radio" name="clean" className="clean" value="1" defaultChecked={comedian.clean === true} />
                                         <label htmlFor="clean">
                                             <span>Clean</span>
                                         </label><br />
-                                    <input type="radio" name="explicit" className="explicit" value="0" defaultChecked={this.context.comedians[index].clean === false} />
+                                    <input type="radio" name="explicit" className="explicit" value="0" defaultChecked={comedian.clean === false} />
                                         <label htmlFor="explicit">
                                             <span>Explicit</span>
                                     </label><br />
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="ssn">SSN</label>
-                                    <p>{defaultValue=this.context.comedians[index].ssn} </p>
+                                    <p>{defaultValue=comedian.ssn} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="street">Address</label>
-                                    <p>{defaultValue=this.context.comedians[index].street} </p>
-                                    <p>{defaultValue=this.context.comedians[index].city} </p>
-                                    <p>{defaultValue=this.context.comedians[index].st} </p>
-                                    <p>{defaultValue=this.context.comedians[index].zip} </p>
+                                    <p>{defaultValue=comedian.street} </p>
+                                    <p>{defaultValue=comedian.city} </p>
+                                    <p>{defaultValue=comedian.st} </p>
+                                    <p>{defaultValue=comedian.zip} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="website">Website:</label>
-                                    <p>{defaultValue=this.context.comedians[index].website} </p>
+                                    <p>{defaultValue=comedian.website} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="facebook">Facebook Handle:</label>
-                                    <p>{defaultValue=this.context.comedians[index].facebook} </p>
+                                    <p>{defaultValue=comedian.facebook} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="twitter">Twitter Handle:</label>
-                                    <p>{defaultValue=this.context.comedians[index].twitter} </p>
+                                    <p>{defaultValue=comedian.twitter} </p>
                                 </div>
                                 <div className="form-section">
                                     <label htmlFor="instagram">Instagram Handle:</label>
-                                    <p>{defaultValue=this.context.comedians[index].instagram} </p>
+                                    <p>{defaultValue=comedian.instagram} </p>
                                 </div>
                                 <button><Link to={`/editComedian/${comedian.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
                                 <button type="delete" onClick={this.handleDeleteComedian}>Delete</button>

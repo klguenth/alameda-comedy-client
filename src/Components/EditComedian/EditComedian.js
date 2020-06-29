@@ -4,12 +4,7 @@ import ApiContext from '../../ApiContext.js';
 import './EditComedian.css';
 
 export default class EditComedian extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            comedians: this.props.comedians
-        }
-    }
+
 
     static defaultProps = {
         editComedian: () => {},
@@ -25,7 +20,7 @@ export default class EditComedian extends React.Component {
         const id = this.props.match.params.id;
         const index = this.findById(id);
         const comedianId = this.context.comedians[index].id;
-        const modifiedComedian = {id};
+        const modifiedComedian = {};
         modifiedComedian.first_name = event.target.first_name.value;
         modifiedComedian.last_name = event.target.last_name.value;
         modifiedComedian.phone = event.target.phone.value;
@@ -57,14 +52,20 @@ export default class EditComedian extends React.Component {
             })
         .then(res => {
             if (!res.ok) {
+                res.json().then((res) => {
+                    throw res
+                })  
                 console.log('error')
-            return res.json();
             }
         })
         .then((res) => {
+            console.log('res', res);
             modifiedComedian.id = id;
             this.context.editComedian(modifiedComedian)
             this.props.history.push(`/comedianList`);
+        })
+        .catch(error => {
+            console.error({ error })
         });
     }
     findById(id) {
@@ -76,12 +77,15 @@ export default class EditComedian extends React.Component {
     }
 
     render() {
-        let id = this.props.match.params.id;
-        let index = this.findById(id)
-        if (!this.context.comedians.length) {
-            return <p>Loading...</p>;
-        }
+        const comedian = this.context.comedians.find((comedian) =>
+            +comedian.id == +this.props.match.params.id)
         return (
+        // let id = this.props.match.params.id;
+        // let index = this.findById(id)
+        // if (!this.context.comedians.length) {
+        //     return <p>Loading...</p>;
+        // }
+        // return (
             <ApiContext.Consumer>
                 {defaultValue => (
                     <div>
@@ -92,31 +96,31 @@ export default class EditComedian extends React.Component {
                         <form id="record-comic" onSubmit={this.handleEditComedian}>
                             <div className="form-section">
                                 <label htmlFor="first_name">First Name</label>
-                                <input type="text" name="first_name" defaultValue={this.context.comedians[index].first_name} required />
+                                <input type="text" name="first_name" defaultValue={comedian.first_name} required />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="last_name">Last Name</label>
-                                <input type="text" name="last_name" defaultValue={this.context.comedians[index].last_name} required />
+                                <input type="text" name="last_name" defaultValue={comedian.last_name} required />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="comic-phone">Phone</label>
-                                <input type="text" name="phone" defaultValue={this.context.comedians[index].phone} required />
+                                <input type="text" name="phone" defaultValue={comedian.phone} required />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="email">Email</label>
-                                <input type="text" name="email" defaultValue={this.context.comedians[index].email} required />
+                                <input type="text" name="email" defaultValue={comedian.email} required />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="bio">Bio</label>
-                                <textarea name="bio" rows="5" defaultValue={this.context.comedians[index].bio} required />
+                                <textarea name="bio" rows="5" defaultValue={comedian.bio} required />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="notes">Notes</label>
-                                <textarea name="notes" rows="10" defaultValue={this.context.comedians[index].notes} required></textarea>
+                                <textarea name="notes" rows="10" defaultValue={comedian.notes} required></textarea>
                             </div>
                             <div className="form-section">
                             <label htmlFor="form-section">Category</label>
-                                <select name="category" id="category" defaultValue={this.context.comedians[index].category}>
+                                <select name="category" id="category" defaultValue={comedian.category}>
                                     <option value="open mic">Open Mic</option>
                                     <option value="audition">Audition</option>
                                     <option value="late show">Late Show</option>
@@ -128,7 +132,7 @@ export default class EditComedian extends React.Component {
                             </div>
                             <div className="form-section">
                             <label htmlFor="form-section">Gender</label>
-                                <select name="gender" id="gender" defaultValue={this.context.comedians[index].gender}>
+                                <select name="gender" id="gender" defaultValue={comedian.gender}>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                     <option value="other">Other</option>
@@ -136,11 +140,11 @@ export default class EditComedian extends React.Component {
                             </div>
                             <div className="form-section">
                                 <label htmlFor="age">Age</label>
-                                <input type="number" name="age" placeholder="25" defaultValue={this.context.comedians[index].age} />
+                                <input type="number" name="age" placeholder="25" defaultValue={comedian.age} />
                             </div>
                             <div className="form-section">
                             <label htmlFor="race">Race</label>
-                                <select name="race" id="race" defaultValue={this.context.comedians[index].race}>
+                                <select name="race" id="race" defaultValue={comedian.race}>
                                     <option value="white">White</option>
                                     <option value="black">Black</option>
                                     <option value="asian">Asian</option>
@@ -151,22 +155,22 @@ export default class EditComedian extends React.Component {
                             </div>
                             <div className="form-section">
                                 <p>Passed vs. Not Passed</p>
-                                <input type="radio" name="passed" value="0" className="passed" defaultChecked={this.context.comedians[index].passed === true}/>
+                                <input type="radio" name="passed" value="0" className="passed" defaultChecked={comedian.passed === true}/>
                                     <label htmlFor="passed">
                                         <span>Passed</span>
                                     </label><br />
-                                <input type="radio" name="not-passed" value="0" className="not-passed" defaultChecked={this.context.comedians[index].passed === false}/>
+                                <input type="radio" name="not-passed" value="0" className="not-passed" defaultChecked={comedian.passed === false}/>
                                     <label htmlFor="not-passed">
                                         <span>Not Passed</span>
                                 </label><br />
                             </div>
                             <div className="form-section">
                                 <p>Clean vs. Explicit</p>
-                                <input type="radio" name="clean" className="clean" value="1" defaultChecked={this.context.comedians[index].clean === true} />
+                                <input type="radio" name="clean" className="clean" value="1" defaultChecked={comedian.clean === true} />
                                     <label htmlFor="clean">
                                         <span>Clean</span>
                                     </label><br />
-                                <input type="radio" name="explicit" className="explicit" value="0" defaultChecked={this.context.comedians[index].clean === false} />
+                                <input type="radio" name="explicit" className="explicit" value="0" defaultChecked={comedian.clean === false} />
                                     <label htmlFor="explicit">
                                         <span>Explicit</span>
                                 </label><br />
@@ -174,39 +178,39 @@ export default class EditComedian extends React.Component {
                             <br />
                             <div className="form-section">
                                 <label htmlFor="ssn">SSN</label>
-                                <input type="text" name="ssn" defaultValue={this.context.comedians[index].ssn} />
+                                <input type="text" name="ssn" defaultValue={comedian.ssn} />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="street">Street</label>
-                                <input type="text" name="street" defaultValue={this.context.comedians[index].street} />
+                                <input type="text" name="street" defaultValue={comedian.street} />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="city">City</label>
-                                <input type="text" name="city" defaultValue={this.context.comedians[index].city} />
+                                <input type="text" name="city" defaultValue={comedian.city} />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="State">State</label>
-                                <input type="text" name="st" defaultValue={this.context.comedians[index].st} />
+                                <input type="text" name="st" defaultValue={comedian.st} />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="zip">Zipcode</label>
-                                <input type="text" name="zip" defaultValue={this.context.comedians[index].zip} />
+                                <input type="text" name="zip" defaultValue={comedian.zip} />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="website">Website</label>
-                                <input type="text" name="website" defaultValue={this.context.comedians[index].website} />
+                                <input type="text" name="website" defaultValue={comedian.website} />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="facebook">Facebook Handle</label>
-                                <input type="text" name="facebook" defaultValue={this.context.comedians[index].facebook} />
+                                <input type="text" name="facebook" defaultValue={comedian.facebook} />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="twitter">Twitter Handle</label>
-                                <input type="text" name="twitter" defaultValue={this.context.comedians[index].twitter} />
+                                <input type="text" name="twitter" defaultValue={comedian.twitter} />
                             </div>
                             <div className="form-section">
                                 <label htmlFor="instagram">Instagram Handle</label>
-                                <input type="text" name="instagram" defaultValue={this.context.comedians[index].instagram} />
+                                <input type="text" name="instagram" defaultValue={comedian.instagram} />
                             </div>
                             <button type="reset">Reset</button>
                             <button type="submit">Submit</button>

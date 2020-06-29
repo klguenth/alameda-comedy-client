@@ -4,12 +4,7 @@ import ApiContext from '../../ApiContext.js';
 import './EditShow.css';
 
 export default class EditShow extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         shows: this.props.shows
-    //     }
-    // }
+
 
     static defaultProps = {
         editShow: () => {},

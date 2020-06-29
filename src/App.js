@@ -91,11 +91,26 @@ export default class App extends React.Component {
 
   //sets state for comedian edits
   handleEditComedian = (comedian) => {
-    const index = findComedian(this.state.comedians, comedian.id);
-    const comedians = [...this.state.comedians];
-    this.setState ({
-      comedians: comedians.splice(index, 1, comedian)
+    console.log('Editing:', comedian)
+    const newComedians = this.state.comedians.map((c) => {
+      if (+c.id === +comedian.id) {
+        return {
+          ...c,
+          ...comedian,
+        }
+      }
+      return c;
     })
+    this.setState({
+      comedians: newComedians
+    }, () => {
+      console.log('after setState', this.state.comedians)
+    })
+    // const index = findComedian(this.state.comedians, comedian.id);
+    // const comedians = [...this.state.comedians];
+    // this.setState ({
+    //   comedians: comedians.splice(index, 1, comedian)
+    // })
   }
 
 //sets state for comedian delete
@@ -122,17 +137,8 @@ export default class App extends React.Component {
     this.setState({
       shows: newShows
     }, () => {
-      //this function is called when the state is updated.
       console.log('after setState', this.state.shows)
     })
-    // const index = findShow(this.state.shows, show.id);
-    // const shows = [...this.state.shows];
-    // console.log('shows', shows);
-    // shows[index] = show
-    // this.setState ({
-    //   shows: shows
-    // })
-    // console.log('after setState', this.state.shows)
   }
   
 //sets state for show delete
