@@ -109,14 +109,30 @@ export default class App extends React.Component {
 
 //sets state for show edits
   handleEditShow = (show) => {
-    const index = findShow(this.state.shows, show.id);
-    const shows = [...this.state.shows];
-    console.log('shows', shows);
-    shows[index] = show
-    this.setState ({
-      shows: shows
+    console.log('Editing:', show)
+    const newShows = this.state.shows.map((s) => {
+      if (+s.id === +show.id) {
+        return {
+          ...s,
+          ...show,
+        }
+      }
+      return s;
     })
-    console.log('after setState', this.state.shows)
+    this.setState({
+      shows: newShows
+    }, () => {
+      //this function is called when the state is updated.
+      console.log('after setState', this.state.shows)
+    })
+    // const index = findShow(this.state.shows, show.id);
+    // const shows = [...this.state.shows];
+    // console.log('shows', shows);
+    // shows[index] = show
+    // this.setState ({
+    //   shows: shows
+    // })
+    // console.log('after setState', this.state.shows)
   }
   
 //sets state for show delete

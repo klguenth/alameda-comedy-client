@@ -47,10 +47,12 @@ export default class EditShow extends React.Component {
             body: JSON.stringify(modifiedShow),
         })
         .then(res => {
-            if (!res.ok) {
+            if ((!res.ok)) {
+                res.json().then((res) => {
+                    throw res
+                })
                 console.log('error')
             }
-            return res.json();
         })
         .then((res) => {
             console.log('res', res);
