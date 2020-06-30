@@ -58,6 +58,7 @@ export default class ShowList extends React.Component {
             {show.title}<br />
             {show.show_date.slice(0, 10)}<br />
             {show.show_time}<br />
+            <button><Link to={`/showDetail/${show.id}`} className='detailButton' aria-label='detail button'>Details</Link></button>
             <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
           </li>
           );

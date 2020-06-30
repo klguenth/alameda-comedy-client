@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from './Components/Nav/Nav.js';
 import LandingPage from './Components/LandingPage/LandingPage.js';
 import ShowList from './Components/ShowList/ShowList.js';
+import ShowDetail from './Components/ShowDetail/ShowDetail.js';
 import AddShow from './Components/AddShow/AddShow.js';
 import EditShow from './Components/EditShow/EditShow.js';
 import AddComedian from './Components/AddComedian/AddComedian.js';
@@ -79,6 +80,7 @@ export default class App extends React.Component {
       <>
         <Route exact path='/' component={LandingPage} />
         <Route path='/showList' component={ShowList} shows={this.state.shows} />
+        <Route path='/showDetail/:id' render={(props) => <ShowDetail {...props} />} />
         <Route path='/addShow' component={AddShow} />
         <Route path='/editShow/:id' render={(props) => <EditShow {...props} />} />
         <Route path='/addComedian' component={AddComedian} />

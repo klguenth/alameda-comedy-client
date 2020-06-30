@@ -49,7 +49,7 @@ export default class AddShow extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="show">
                 <header>
                     <h1>New Show</h1>
                 </header>
@@ -102,49 +102,34 @@ export default class AddShow extends React.Component {
                             <label htmlFor="comps">Comps</label>
                             <input type="number" min="1" step="any" name="comps" id="comps" />
                         </div>
-                        <button type="reset">Reset</button>
-                        <button type="submit">Submit</button>
-                    </form>
-                </section>
                 <header>
                     <h1>Lineup</h1>
                 </header>
-                <section className="record-show">
-                    <form>
                         <div className="form-section">
-                            <label htmlFor="comic-name">Comic Name</label>
+                            <label htmlFor="comic-name">1. Comic Name</label>
                             <input type="text" name="show-name" placeholder="Comic Name" required />
                         </div>
                         <div className="form-section">
-                            <label htmlFor="comic-name">Comic Name</label>
+                            <label htmlFor="comic-name">2. Comic Name</label>
                             <input type="text" name="show-name" placeholder="Comic Name" required />
                         </div>
                         <div className="form-section">
-                            <label htmlFor="comic-name">Comic Name</label>
+                            <label htmlFor="comic-name">3. Comic Name</label>
                             <input type="text" name="show-name" placeholder="Comic Name" required />
                         </div>
                         <div className="form-section">
-                            <label htmlFor="comic-name">Comic Name</label>
+                            <label htmlFor="comic-name">4. Comic Name</label>
                             <input type="text" name="show-name" placeholder="Comic Name" required />
                         </div>
                         <div className="form-section">
-                            <label htmlFor="comic-name">Comic Name</label>
+                            <label htmlFor="comic-name">5. Comic Name</label>
                             <input type="text" name="show-name" placeholder="Comic Name" required />
                         </div>
                         <div className="form-section">
-                            <label htmlFor="comic-name">Comic Name</label>
+                            <label htmlFor="comic-name">6. Comic Name</label>
                             <input type="text" name="show-name" placeholder="Comic Name" required />
                         </div>
                         <button type="reset">Reset</button>
-                        <button type="submit">Submit</button>
-                    </form>
-                </section> 
-                <header>
-                    <h1>Comic Search</h1>
-                </header>
-                <section className="record-show">
-                    <form>
-                        <input type="text" placeholder="Search.." name="search" />
                         <button type="submit">Submit</button>
                     </form>
                 </section> 
