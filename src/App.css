@@ -7,8 +7,13 @@
 .app {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     text-align: center;
+    border: 2px solid #0338FF;
+    border-radius: 5px;
+    margin: auto;
+    padding: 30px;
+    width: 50%;
 }
 
 button {
