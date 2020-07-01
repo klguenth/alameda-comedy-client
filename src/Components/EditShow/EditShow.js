@@ -33,6 +33,12 @@ export default class EditShow extends React.Component {
         modifiedShow.price_general = event.target.price_general.value;
         modifiedShow.capacity = event.target.capacity.value;
         modifiedShow.comps = event.target.comps.value;
+        modifiedShow.comic_one = event.target.comic_one;
+        modifiedShow.comic_two = event.target.comic_two;
+        modifiedShow.comic_three = event.target.comic_three;
+        modifiedShow.comic_four = event.target.comic_four;
+        modifiedShow.comic_five = event.target.comic_five;
+        modifiedShow.comic_six = event.target.comic_six;
         // modifiedShow.tix_id = event.target.tix_id.value;
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/${showId}`, {
             method: 'PATCH',
@@ -167,6 +173,33 @@ export default class EditShow extends React.Component {
                                     <label htmlFor="comps">Comps</label>
                                     <input type="number" min="1" step="any" name="comps" id="comps" defaultValue={show.comps} />
                                 </div>
+                                <header>
+                                    <h1>Lineup</h1>
+                                </header>
+                                    <div className="form-section">
+                                        <label htmlFor="comic_one">1. Comic Name</label>
+                                        <input type="text" name="comic_one" defaultValue={show.comic_one} required />
+                                    </div>
+                                    <div className="form-section">
+                                        <label htmlFor="comic_two">2. Comic Name</label>
+                                        <input type="text" name="comic_two" defaultValue={show.comic_two} required />
+                                    </div>
+                                    <div className="form-section">
+                                        <label htmlFor="comic_three">3. Comic Name</label>
+                                        <input type="text" name="comic_three" defaultValue={show.comic_three} required />
+                                    </div>
+                                    <div className="form-section">
+                                        <label htmlFor="comic_four">4. Comic Name</label>
+                                        <input type="text" name="comic_four" defaultValue={show.comic_four} required />
+                                    </div>
+                                    <div className="form-section">
+                                        <label htmlFor="comic_five">5. Comic Name</label>
+                                        <input type="text" name="comic_five" defaultValue={show.comic_five} required />
+                                    </div>
+                                    <div className="form-section">
+                                        <label htmlFor="comic_six">6. Comic Name</label>
+                                        <input type="text" name="comic_six" defaultValue={show.comic_six} required />
+                                    </div>
                                 <button type="reset">Reset</button>
                                 <button type="submit">Submit</button>
                                 <button type="delete" onClick={this.handleDeleteShow}>Delete</button>

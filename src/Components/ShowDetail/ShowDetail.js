@@ -100,27 +100,27 @@ export default class ShowDetail extends React.Component {
                     </header>
                             <div className="form-section">
                                 <label htmlFor="comic-name">1. Comic Name</label>
-                                <input type="text" name="show-name" placeholder="Comic Name" required />
+                                <p>{defaultValue=show.comic_one}</p>
                             </div>
                             <div className="form-section">
                                 <label htmlFor="comic-name">2. Comic Name</label>
-                                <input type="text" name="show-name" placeholder="Comic Name" required />
+                                <p>{defaultValue=show.comic_two}</p>
                             </div>
                             <div className="form-section">
                                 <label htmlFor="comic-name">3. Comic Name</label>
-                                <input type="text" name="show-name" placeholder="Comic Name" required />
+                                <p>{defaultValue=show.comic_three}</p>
                             </div>
                             <div className="form-section">
                                 <label htmlFor="comic-name">4. Comic Name</label>
-                                <input type="text" name="show-name" placeholder="Comic Name" required />
+                                <p>{defaultValue=show.comic_four}</p>
                             </div>
                             <div className="form-section">
                                 <label htmlFor="comic-name">5. Comic Name</label>
-                                <input type="text" name="show-name" placeholder="Comic Name" required />
+                                <p>{defaultValue=show.comic_five}</p>
                             </div>
                             <div className="form-section">
                                 <label htmlFor="comic-name">6. Comic Name</label>
-                                <input type="text" name="show-name" placeholder="Comic Name" required />
+                                <p>{defaultValue=show.comic_six}</p>
                             </div>
                             <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
                             <button type="delete" onClick={this.handleDeleteShow}>Delete</button>
