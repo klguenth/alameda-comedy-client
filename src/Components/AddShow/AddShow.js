@@ -25,12 +25,12 @@ export default class AddShow extends React.Component {
         newShow.price_premium = event.target.price_premium.value;
         newShow.capacity = event.target.capacity.value;
         newShow.comps = event.target.comps.value;
-        newShow.comic_one = event.target.comic_one;
-        newShow.comic_two = event.target.comic_two;
-        newShow.comic_three = event.target.comic_three;
-        newShow.comic_four = event.target.comic_four;
-        newShow.comic_five = event.target.comic_five;
-        newShow.comic_six = event.target.comic_six;
+        newShow.comic_one = event.target.comic_one.value;
+        newShow.comic_two = event.target.comic_two.value;
+        newShow.comic_three = event.target.comic_three.value;
+        newShow.comic_four = event.target.comic_four.value;
+        newShow.comic_five = event.target.comic_five.value;
+        newShow.comic_six = event.target.comic_six.value;
 
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/show`, {
         method: 'POST',
@@ -113,27 +113,27 @@ export default class AddShow extends React.Component {
                 </header>
                         <div className="form-section">
                             <label htmlFor="comic_one">1. Comic Name</label>
-                            <input type="text" name="comic_one" placeholder="Comic Name" required />
+                            <input type="text" name="comic_one" placeholder="Name" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="comic_two">2. Comic Name</label>
-                            <input type="text" name="comic_two" placeholder="Comic Name" required />
+                            <input type="text" name="comic_two" placeholder="Name" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="comic_three">3. Comic Name</label>
-                            <input type="text" name="comic_three" placeholder="Comic Name" required />
+                            <input type="text" name="comic_three" placeholder="Name" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="comic_four">4. Comic Name</label>
-                            <input type="text" name="comic_four" placeholder="Comic Name" required />
+                            <input type="text" name="comic_four" placeholder="Name" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="comic_five">5. Comic Name</label>
-                            <input type="text" name="comic_five" placeholder="Comic Name" required />
+                            <input type="text" name="comic_five" placeholder="Name" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="comic_six">6. Comic Name</label>
-                            <input type="text" name="comic_six" placeholder="Comic Name" required />
+                            <input type="text" name="comic_six" placeholder="Name" />
                         </div>
                         <button type="reset">Reset</button>
                         <button type="submit">Submit</button>
