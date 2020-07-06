@@ -1,11 +1,11 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
 import config from '../../config.js';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './ShowList.css';
 import ApiContext from '../../ApiContext.js';
 
-export default class ShowList extends React.Component {
+class ShowList extends React.Component {
     // constructor(props) {
     //     super(props)
     //     this.state = {
@@ -82,3 +82,5 @@ export default class ShowList extends React.Component {
         );
     }
 }
+
+export default withRouter(ShowList);

@@ -12,7 +12,7 @@ import ComedianDetail from './Components/ComedianDetail/ComedianDetail.js';
 import ApiContext from './ApiContext';
 import { findComedian, findShow } from './helpers.js';
 import config from './config.js';
-import { Route } from 'react-router';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
 
@@ -77,7 +77,7 @@ export default class App extends React.Component {
 
   renderRoutes() {
     return (
-      <>
+      <Router>
         <Route exact path='/' component={LandingPage} />
         <Route path='/showList' component={ShowList} shows={this.state.shows} />
         <Route path='/showDetail/:id' render={(props) => <ShowDetail {...props} />} />
@@ -87,7 +87,7 @@ export default class App extends React.Component {
         <Route path='/editComedian/:id' render={(props) => <EditComedian {...props} />} />
         <Route path='/comedianList' component={ComedianList} comedians={this.state.comedians} />
         <Route path='/comedianDetail/:id' render={(props) => <ComedianDetail {...props} />} />
-      </>
+      </Router>
     );
   }
 
@@ -108,11 +108,6 @@ export default class App extends React.Component {
     }, () => {
       console.log('after setState', this.state.comedians)
     })
-    // const index = findComedian(this.state.comedians, comedian.id);
-    // const comedians = [...this.state.comedians];
-    // this.setState ({
-    //   comedians: comedians.splice(index, 1, comedian)
-    // })
   }
 
 //sets state for comedian delete
