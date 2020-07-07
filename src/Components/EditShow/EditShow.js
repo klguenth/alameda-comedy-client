@@ -99,22 +99,9 @@ export default class EditShow extends React.Component {
     }
 
     render() {
-        // const show = this.context.shows.find(
-        //     // converts both sides to integers
-        //     show => +show.id === +this.props.match.params.id
-        // );
-
-        //  Technically the better way would be to have a marker called isFetching 
-        // and display the appropriate content based on it because if there were legitimately no shows, the user would just have a blank screen.
-        // if (this.context.shows.length === 0) {
-        //     return null;
-        // }
         const show = this.context.shows.find((show) => 
             +show.id == +this.props.match.params.id)
         return (
-        // let id = this.props.match.params.id;
-        // let index = this.findById(id)
-
             <ApiContext.Consumer>
                 {defaultValue => (
                     <div>
