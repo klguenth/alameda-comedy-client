@@ -77,7 +77,7 @@ export default class App extends React.Component {
 
   renderRoutes() {
     return (
-      <Router>
+      <>
         <Route exact path='/' component={LandingPage} />
         <Route path='/showList' component={ShowList} shows={this.state.shows} />
         <Route path='/showDetail/:id' render={(props) => <ShowDetail {...props} />} />
@@ -87,7 +87,7 @@ export default class App extends React.Component {
         <Route path='/editComedian/:id' render={(props) => <EditComedian {...props} />} />
         <Route path='/comedianList' component={ComedianList} comedians={this.state.comedians} />
         <Route path='/comedianDetail/:id' render={(props) => <ComedianDetail {...props} />} />
-      </Router>
+      </>
     );
   }
 
