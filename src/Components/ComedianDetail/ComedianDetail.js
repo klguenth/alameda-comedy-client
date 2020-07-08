@@ -48,12 +48,6 @@ export default class ComedianDetail extends React.Component {
     render() {
         const comedian = this.context.comedians.find((comedian) =>
         +comedian.id == +this.props.match.params.id)
-        // let id = this.props.match.params.id;
-        // let index = this.findById(id)
-        // let comedian = this.context.comedians[index];
-        // if (!this.context.comedians.length) {
-        //     return <p>Loading...</p>;
-        // }
         return (
             <ApiContext.Consumer>
                 {defaultValue => (

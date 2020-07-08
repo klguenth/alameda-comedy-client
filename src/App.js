@@ -27,7 +27,8 @@ export default class App extends React.Component {
       handleDeleteShow: this.handleDeleteShow.bind(this),
       handleEditShow: this.handleEditShow.bind(this),
       handleDeleteComedian: this.handleDeleteComedian.bind(this),
-      handleEditComedian: this.handleEditComedian.bind(this)
+      handleEditComedian: this.handleEditComedian.bind(this),
+      handleSubmitAuth: this.handleSubmitAuth.bind(this)
     };
   }
 
@@ -154,7 +155,8 @@ export default class App extends React.Component {
       deleteComedian: this.handleDeleteComedian,
       editComedian: this.handleEditComedian,
       deleteShow: this.handleDeleteShow,
-      editShow: this.handleEditShow
+      editShow: this.handleEditShow,
+      submitAuth: this.handleSubmitAuth
     }
     return (
       <ApiContext.Provider value={value}>

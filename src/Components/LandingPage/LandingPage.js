@@ -3,6 +3,34 @@ import Nav from '../Nav/Nav.js';
 import './LandingPage.css';
    
 export default class LandingPage extends React.Component {
+
+    handleSubmitAuth = event => {
+        event.preventDefault()
+        const newUser = {}
+        newUser.full_name = event.target.full_name.value;
+        newUser.email = event.target.email.value;
+        newUser.pw = event.target.pw.value;
+
+    fetch(`${config.REACT_APP_API_ENDPOINT}/api/users`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(newUser)
+        })
+        .then(res => {
+            if (!res.ok)
+                return res.json().then(e => Promise.reject(e))
+            return res.json()
+        })
+        .then((res) => {
+            window.location.reload()
+        })
+        .catch(error => {
+            console.error({ error })
+        });
+    }
+
     render() {
         return (
             <>
@@ -21,13 +49,13 @@ export default class LandingPage extends React.Component {
                     </section>
                     <section>
                         <h2>Login</h2>
-                        <form className='signup-form'>
+                        <form onSubmit={this.handleSubmitAuth} className='signup-form'>
                             <label htmlFor="name">Full Name</label>
-                            <input type="text" name="fullname" id="fullname" /><br />
-                            <label htmlFor="username">Email</label>
-                            <input type="text" name="username" id="username" /><br />
-                            <label htmlFor="password">Password</label>
-                            <input type="password" name="password" id="password" /><br />
+                            <input type="text" name="full_name" id="full_name" /><br />
+                            <label htmlFor="email">Email</label>
+                            <input type="text" name="email" id="email" /><br />
+                            <label htmlFor="pw">Password</label>
+                            <input type="password" name="pw" id="pw" /><br />
                             <button type='submit'>Sign In</button>
                         </form>
                     </section>

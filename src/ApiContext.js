@@ -6,5 +6,6 @@ export default React.createContext({
     deleteShow: () => {},
     editShow: () => {},
     deleteComedian: () => {},
-    editComedian: () => {}
+    editComedian: () => {},
+    submitAuth: () => {}
 })
