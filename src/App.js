@@ -28,7 +28,7 @@ export default class App extends React.Component {
       handleEditShow: this.handleEditShow.bind(this),
       handleDeleteComedian: this.handleDeleteComedian.bind(this),
       handleEditComedian: this.handleEditComedian.bind(this),
-      handleSubmitAuth: this.handleSubmitAuth.bind(this)
+      // handleSubmitAuth: this.handleSubmitAuth.bind(this)
     };
   }
 

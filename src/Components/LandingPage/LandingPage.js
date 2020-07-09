@@ -1,6 +1,8 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
 import './LandingPage.css';
+import config from '../../config.js';
+import ApiContext from '../../ApiContext.js';
    
 export default class LandingPage extends React.Component {
 
@@ -17,26 +19,26 @@ export default class LandingPage extends React.Component {
         newUser.pw = event.target.pw.value;
         this.props.onRegistrationSuccess();
         
-    fetch(`${config.REACT_APP_API_ENDPOINT}/api/users`, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(newUser)
-        })
-        .then(res => {
-            return (!res.ok)
-                ? res.json().then(e => Promise.reject(e))
-                : res.json()
-        })
-        .then((newUser => {
-            this.props.history.push('/')
-            this.context.
-            window.location.reload()
-        })
-        .catch(error => {
-            console.error({ error })
-        })
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/users`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+            })
+            .then(res => {
+                return (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            })
+            .then(newUser => {
+                this.props.history.push('/')
+                this.context.
+                window.location.reload()
+            })
+            .catch(error => {
+                console.error({ error })
+            })
     }
 
     render() {
