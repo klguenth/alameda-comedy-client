@@ -4,13 +4,19 @@ import './LandingPage.css';
    
 export default class LandingPage extends React.Component {
 
+    static defaultProps = {
+        onRegistrationSuccess: () => {},
+    }
+    static contextType = ApiContext;
+
     handleSubmitAuth = event => {
         event.preventDefault()
         const newUser = {}
         newUser.full_name = event.target.full_name.value;
         newUser.email = event.target.email.value;
         newUser.pw = event.target.pw.value;
-
+        this.props.onRegistrationSuccess();
+        
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/users`, {
         method: 'POST',
         headers: {
@@ -19,16 +25,18 @@ export default class LandingPage extends React.Component {
         body: JSON.stringify(newUser)
         })
         .then(res => {
-            if (!res.ok)
-                return res.json().then(e => Promise.reject(e))
-            return res.json()
+            return (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
         })
-        .then((res) => {
+        .then((newUser => {
+            this.props.history.push('/')
+            this.context.
             window.location.reload()
         })
         .catch(error => {
             console.error({ error })
-        });
+        })
     }
 
     render() {
