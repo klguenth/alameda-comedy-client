@@ -38,7 +38,7 @@ export default class ComedianDetail extends React.Component {
         })
     }
     findById(id) {
-        for (let i = 0; i<this.context.comedians.length; i++) {
+        for (let i = 0; i < this.context.comedians.length; i++) {
             if (parseInt(id) === this.context.comedians[i].id) {
                 return i;
             }

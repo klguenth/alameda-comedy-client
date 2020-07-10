@@ -8,6 +8,7 @@ export default class LandingPage extends React.Component {
 
     static defaultProps = {
         onRegistrationSuccess: () => {},
+        submitAuth: () => {}
     }
     static contextType = ApiContext;
 
@@ -33,7 +34,7 @@ export default class LandingPage extends React.Component {
             })
             .then(newUser => {
                 this.props.history.push('/')
-                this.context.
+                this.context.submitAuth();
                 window.location.reload()
             })
             .catch(error => {
@@ -46,7 +47,7 @@ export default class LandingPage extends React.Component {
             <>
                 <Nav />
                 <div className="landingContainer">
-                    <img src="/images/logo.png" height="200px" />
+                    <img src="/images/logo.png" height="200px" alt="alameda comedy logo" />
                     <header role="banner">
                         <h1>Alameda Comedy Club</h1>
                     </header>
