@@ -15,7 +15,6 @@ export default class LandingPage extends React.Component {
     handleSubmitAuth = event => {
         event.preventDefault()
         const newUser = {}
-        newUser.full_name = event.target.full_name.value;
         newUser.email = event.target.email.value;
         newUser.pw = event.target.pw.value;
         this.props.onRegistrationSuccess();
@@ -61,8 +60,6 @@ export default class LandingPage extends React.Component {
                     <section>
                         <h2>Login</h2>
                         <form onSubmit={this.handleSubmitAuth} className='signup-form'>
-                            <label htmlFor="name">Full Name</label>
-                            <input type="text" name="full_name" id="full_name" /><br />
                             <label htmlFor="email">Email</label>
                             <input type="text" name="email" id="email" /><br />
                             <label htmlFor="pw">Password</label>
