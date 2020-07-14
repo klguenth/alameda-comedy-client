@@ -14,7 +14,7 @@ import { findComedian, findShow } from './helpers.js';
 import config from './config.js';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-
+console.log('reactappendpoint', process.env.REACT_APP_API_ENDPOINT);
 
 export default class App extends React.Component {
   
