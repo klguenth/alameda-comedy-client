@@ -48,51 +48,51 @@ export default class ShowDetail extends React.Component {
                     <section className="record-show">
                         <form id="record-show">
                             <div className="form-section">
-                                <label htmlFor="title">Title</label>
+                                <label htmlFor="title">Title:</label>
                                 <p>{defaultValue=show.title}</p>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="show_date">Date</label>
+                                <label htmlFor="show_date">Date:</label>
                                 <p>{defaultValue=show.show_date}</p>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="show_time">Time</label>
+                                <label htmlFor="show_time">Time:</label>
                                 <p>{defaultValue=show.show_time}</p>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="comics">Comics</label>
+                                <label htmlFor="comics">Comics:</label>
                                 <p>{defaultValue=show.comics}</p>
                             </div>
                             {/* TODO defaultvalue for select option */}
                             <div className="form-section">
-                            <label htmlFor="stage">Stage</label>
+                            <label htmlFor="stage">Stage:</label>
                                 <select name="stage" id="stage">
                                     <option value="patio">patio</option>
                                     <option value="showroom">showroom</option>
                                 </select>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="details">Details</label>
+                                <label htmlFor="details">Details:</label>
                                 <p>{defaultValue=show.details}</p>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="notes">Notes</label>
+                                <label htmlFor="notes">Notes:</label>
                                 <p>{defaultValue=show.notes}</p>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="price_general">General Price</label>
+                                <label htmlFor="price_general">General Price:</label>
                                 <p>{defaultValue=show.price_general}</p>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="price_premium">Premium Price</label>
+                                <label htmlFor="price_premium">Premium Price:</label>
                                 <p>{defaultValue=show.price_premium}</p>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="capacity">Capacity</label>
+                                <label htmlFor="capacity">Capacity:</label>
                                 <p>{defaultValue=show.capacity}</p>
                             </div>
                             <div className="form-section">
-                                <label htmlFor="comps">Comps</label>
+                                <label htmlFor="comps">Comps:</label>
                                 <p>{defaultValue=show.comps}</p>
                             </div>
                     <header>

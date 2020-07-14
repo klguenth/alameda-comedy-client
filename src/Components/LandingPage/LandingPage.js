@@ -19,6 +19,35 @@ export default class LandingPage extends React.Component {
         newUser.pw = event.target.pw.value;
         this.props.onRegistrationSuccess();
         
+        fetch(`${config.REACT_APP_API_ENDPOINT}/api/auth/login`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+            })
+            .then(res => {
+                return (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            })
+            .then(token => {
+                this.props.history.push('/')
+                this.context.token = token.authToken;
+            })
+            .catch(error => {
+                console.error({ error })
+            })
+    }
+
+    handleSubmitUser = event => {
+        event.preventDefault()
+        const newUser = {}
+        newUser.full_name = event.target.full_name.value;
+        newUser.email = event.target.email.value;
+        newUser.pw = event.target.pw.value;
+        this.props.onRegistrationSuccess();
+        
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/users`, {
             method: 'POST',
             headers: {
@@ -34,7 +63,6 @@ export default class LandingPage extends React.Component {
             .then(newUser => {
                 this.props.history.push('/')
                 this.context.submitAuth();
-                window.location.reload()
             })
             .catch(error => {
                 console.error({ error })
@@ -58,13 +86,23 @@ export default class LandingPage extends React.Component {
                         <p>Create and maintain records of scheduled performers- including style, influences, frequency, etc.</p>
                     </section>
                     <section>
-                        <h2>Login</h2>
-                        <form onSubmit={this.handleSubmitAuth} className='signup-form'>
+                        <h2>Sign Up</h2>
+                        <form onSubmit={this.handleSubmitUser} className='signup-form'>
+                            <label htmlFor="fullname">Full Name</label>
+                            <input type="text" name="full_name" id="full_name" /><br />
                             <label htmlFor="email">Email</label>
                             <input type="text" name="email" id="email" /><br />
                             <label htmlFor="pw">Password</label>
                             <input type="password" name="pw" id="pw" /><br />
-                            <button type='submit'>Sign In</button>
+                            <button type='submit'>Sign Up</button>
+                        </form>
+                        <h2>Login</h2>
+                        <form onSubmit={this.handleSubmitAuth} className='login-form'>
+                            <label htmlFor="email">Email</label>
+                            <input type="text" name="email" id="email" /><br />
+                            <label htmlFor="pw">Password</label>
+                            <input type="password" name="pw" id="pw" /><br />
+                            <button type='submit'>Login</button>
                         </form>
                     </section>
                 </div>

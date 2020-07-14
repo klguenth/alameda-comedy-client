@@ -38,7 +38,8 @@ export default class AddComedian extends React.Component {
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian`, {
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'authorization': 'Bearer ' + this.context.token
         },
         body: JSON.stringify(newComedian)
         })

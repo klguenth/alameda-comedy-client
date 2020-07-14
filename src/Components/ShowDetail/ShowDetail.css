@@ -1,14 +1,22 @@
-#record-show {
-    margin: 10px auto;
+/* #record-show {
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+} */
 
 .form-section {
     text-align: left;
     padding: 5px;
+}
+
+#record-show label {
+    margin: 50%;
+}
+
+#record-show p {
+    margin: auto;
 }
 
 * {

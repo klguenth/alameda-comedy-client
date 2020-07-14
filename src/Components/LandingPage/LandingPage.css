@@ -27,3 +27,22 @@
     align-items: center;
     margin: 10px 100px;
 }
+
+.login-form {
+    margin: auto;
+}
+
+.login-form label {
+    float: left;
+    padding-left: 50px;
+}
+
+.login-form input {
+    float: right;
+    margin: 0 100px;
+}
+
+.login-form button {
+    align-items: center;
+    margin: 10px 100px;
+}
