@@ -91,17 +91,17 @@ export default class LandingPage extends React.Component {
                             <label htmlFor="fullname">Full Name</label>
                             <input type="text" name="full_name" id="full_name" /><br />
                             <label htmlFor="email">Email</label>
-                            <input type="text" name="email" id="email" /><br />
+                            <input type="text" name="email" className="email" /><br />
                             <label htmlFor="pw">Password</label>
-                            <input type="password" name="pw" id="pw" /><br />
+                            <input type="password" name="pw" className="pw" /><br />
                             <button type='submit'>Sign Up</button>
                         </form>
                         <h2>Login</h2>
                         <form onSubmit={this.handleSubmitAuth} className='login-form'>
                             <label htmlFor="email">Email</label>
-                            <input type="text" name="email" id="email" /><br />
+                            <input type="text" name="email" className="email" /><br />
                             <label htmlFor="pw">Password</label>
-                            <input type="password" name="pw" id="pw" /><br />
+                            <input type="password" name="pw" className="pw" /><br />
                             <button type='submit'>Login</button>
                         </form>
                     </section>
