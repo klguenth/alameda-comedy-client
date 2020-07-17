@@ -142,9 +142,11 @@ export default class App extends React.Component {
   handleDeleteShow = (show) => {
     const index = findShow(this.state.shows, show);
     const shows = this.state.shows;
+    console.log('shows before setstate', this.state.shows);
     this.setState ({
       shows: shows.splice(index, 1)
     })
+    console.log('shows after setstate', this.state.shows);
   }
   
   render() {

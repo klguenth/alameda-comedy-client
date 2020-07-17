@@ -6,12 +6,6 @@ import './ShowList.css';
 import ApiContext from '../../ApiContext.js';
 
 class ShowList extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         shows: [],
-    //     }
-    // }
 
   static defaultProps = {
     editShow: () => {},

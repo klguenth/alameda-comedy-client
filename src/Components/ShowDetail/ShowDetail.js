@@ -24,7 +24,7 @@ export default class ShowDetail extends React.Component {
                 'content-type': 'application/json'
             },
         })
-        .then( res => {
+        .then(res => {
             if (!res.ok)
                 return res.json().then(e => Promise.reject(e))
             return res;
@@ -40,7 +40,8 @@ export default class ShowDetail extends React.Component {
 
     render() {
         const show = this.context.shows.find((show) => 
-        +show.id == +this.props.match.params.id)
+            +show.id == +this.props.match.params.id)
+            console.log('this.context.shows', this.context.shows);
         return (
             <ApiContext.Consumer>
                 {defaultValue => (
@@ -53,7 +54,7 @@ export default class ShowDetail extends React.Component {
                             </div>
                             <div className="form-section">
                                 <label htmlFor="show_date">Date:</label>
-                                <p>{defaultValue=show.show_date}</p>
+                                <p>{defaultValue=show.show_date.slice(0, 10)}</p>
                             </div>
                             <div className="form-section">
                                 <label htmlFor="show_time">Time:</label>

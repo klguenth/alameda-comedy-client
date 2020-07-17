@@ -8,6 +8,7 @@ export default class LandingPage extends React.Component {
 
     static defaultProps = {
         onRegistrationSuccess: () => {},
+        onLoginSuccess: () => {},
         submitAuth: () => {}
     }
     static contextType = ApiContext;
@@ -17,7 +18,7 @@ export default class LandingPage extends React.Component {
         const newUser = {}
         newUser.email = event.target.email.value;
         newUser.pw = event.target.pw.value;
-        this.props.onRegistrationSuccess();
+        this.props.onLoginSuccess();
         
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/auth/login`, {
             method: 'POST',

@@ -48,7 +48,7 @@ export default class EditShow extends React.Component {
             body: JSON.stringify(modifiedShow),
         })
         .then(res => {
-            if ((!res.ok)) {
+            if (!res.ok) {
                 res.json().then((res) => {
                     throw res
                 })
@@ -56,7 +56,6 @@ export default class EditShow extends React.Component {
             }
         })
         .then((res) => {
-            console.log('res', res);
             modifiedShow.id = id;
             this.context.editShow(modifiedShow)
             this.props.history.push(`/showList`);
@@ -165,27 +164,27 @@ export default class EditShow extends React.Component {
                                 </header>
                                     <div className="form-section">
                                         <label htmlFor="comic_one">1. Comic Name</label>
-                                        <input type="text" name="comic_one" defaultValue={show.comic_one} required />
+                                        <input type="text" name="comic_one" defaultValue={show.comic_one} />
                                     </div>
                                     <div className="form-section">
                                         <label htmlFor="comic_two">2. Comic Name</label>
-                                        <input type="text" name="comic_two" defaultValue={show.comic_two} required />
+                                        <input type="text" name="comic_two" defaultValue={show.comic_two} />
                                     </div>
                                     <div className="form-section">
                                         <label htmlFor="comic_three">3. Comic Name</label>
-                                        <input type="text" name="comic_three" defaultValue={show.comic_three} required />
+                                        <input type="text" name="comic_three" defaultValue={show.comic_three} />
                                     </div>
                                     <div className="form-section">
                                         <label htmlFor="comic_four">4. Comic Name</label>
-                                        <input type="text" name="comic_four" defaultValue={show.comic_four} required />
+                                        <input type="text" name="comic_four" defaultValue={show.comic_four} />
                                     </div>
                                     <div className="form-section">
                                         <label htmlFor="comic_five">5. Comic Name</label>
-                                        <input type="text" name="comic_five" defaultValue={show.comic_five} required />
+                                        <input type="text" name="comic_five" defaultValue={show.comic_five} />
                                     </div>
                                     <div className="form-section">
                                         <label htmlFor="comic_six">6. Comic Name</label>
-                                        <input type="text" name="comic_six" defaultValue={show.comic_six} required />
+                                        <input type="text" name="comic_six" defaultValue={show.comic_six} />
                                     </div>
                                 <button type="reset">Reset</button>
                                 <button type="submit">Submit</button>
