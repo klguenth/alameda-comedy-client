@@ -17,39 +17,14 @@ export default class Nav extends React.Component {
         submitAuth: () => {},
     }
 
-    handleSubmitBasicAuth = event => {
-        event.preventDefault()
-        const { email, pw } = event.target
+    // handleSubmitBasicAuth = event => {
+    //     event.preventDefault()
+    //     const { email, pw } = event.target
 
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(email.value, pw.value)
-        )
-    }
-
-    renderLogoutLink() {
-        return (
-            <div className="logoutLink">
-                <Link 
-                onClick={this.handleLogoutClick}
-                to='/'>
-                    Logout
-                </Link>
-            </div>
-        )
-    }
-
-    renderLoginLink() {
-        return (
-            <div className="loginLink">
-                <Link to='/'>
-                    Login
-                </Link>
-                {TokenService.hasAuthToken()
-                    ? this.renderLogoutLink()
-                    : this.renderLoginLink()}
-            </div>
-        )
-    }
+    //     TokenService.saveAuthToken(
+    //         TokenService.makeBasicAuthToken(email.value, pw.value)
+    //     )
+    // }
 
     render() {
         let buttons;
@@ -57,7 +32,7 @@ export default class Nav extends React.Component {
             buttons = <><li><Link to='/'>Home</Link></li>
             <li><Link to='/showList'>Shows</Link></li>
             <li><Link to='/comedianList'>Comedians</Link></li>
-            <button type="submit">Logout</button></>
+            <li><Link to='/'>Logout</Link></li></>
         }
         return(
             <nav className="nav">

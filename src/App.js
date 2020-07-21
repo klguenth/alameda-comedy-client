@@ -28,7 +28,6 @@ export default class App extends React.Component {
       handleDeleteComedian: this.handleDeleteComedian.bind(this),
       handleEditComedian: this.handleEditComedian.bind(this),
       setLoggedIn: this.setLoggedIn.bind(this)
-      // handleSubmitAuth: this.handleSubmitAuth.bind(this)
     };
   }
 
@@ -164,7 +163,6 @@ export default class App extends React.Component {
       editComedian: this.handleEditComedian,
       deleteShow: this.handleDeleteShow,
       editShow: this.handleEditShow,
-      submitAuth: this.handleSubmitAuth
     }
     return (
       <ApiContext.Provider value={value}>

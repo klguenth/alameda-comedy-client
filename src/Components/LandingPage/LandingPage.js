@@ -32,25 +32,11 @@ export default class LandingPage extends React.Component {
         )
     }
 
-    // renderLoginLink() {
-    //     return (
-    //         <div className="loginLink">
-    //             <Link to='/'>
-    //                 Login
-    //             </Link>
-    //             {TokenService.hasAuthToken()
-    //                 ? this.renderLogoutLink()
-    //                 : this.renderLoginLink()}
-    //         </div>
-    //     )
-    // }
-
     handleSubmitAuth = event => {
         event.preventDefault()
         const newUser = {}
         newUser.email = event.target.email.value;
         newUser.pw = event.target.pw.value;
-        // this.props.onLoginSuccess();
         
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/auth/login`, {
             method: 'POST',
@@ -113,7 +99,6 @@ export default class LandingPage extends React.Component {
         }
         return (
             <>
-                {/* <Nav isLoggedIn={this.context.isLoggedIn} /> */}
                 <div className="landingContainer">
                     <img src="/images/logo.png" height="200px" alt="alameda comedy logo" />
                     <header role="banner">
