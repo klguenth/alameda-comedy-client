@@ -4,6 +4,7 @@ export default React.createContext({
     shows: [],
     comedians: [],
     token: null,
+    isLoggedIn: false,
     deleteShow: () => {},
     editShow: () => {},
     deleteComedian: () => {},

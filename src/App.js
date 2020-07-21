@@ -20,13 +20,14 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      loggedIn: true,
+      isLoggedIn: false,
       shows: [],
       comedians: [],
       handleDeleteShow: this.handleDeleteShow.bind(this),
       handleEditShow: this.handleEditShow.bind(this),
       handleDeleteComedian: this.handleDeleteComedian.bind(this),
       handleEditComedian: this.handleEditComedian.bind(this),
+      setLoggedIn: this.setLoggedIn.bind(this)
       // handleSubmitAuth: this.handleSubmitAuth.bind(this)
     };
   }
@@ -75,21 +76,7 @@ export default class App extends React.Component {
     });
   }
 
-  renderRoutes() {
-    return (
-      <>
-        <Route exact path='/' render={(props) => <LandingPage {...props} />} />
-        <Route path='/showList' component={ShowList} shows={this.state.shows} />
-        <Route path='/showDetail/:id' render={(props) => <ShowDetail {...props} />} />
-        <Route path='/addShow' component={AddShow} />
-        <Route path='/editShow/:id' render={(props) => <EditShow {...props} />} />
-        <Route path='/addComedian' component={AddComedian} />
-        <Route path='/editComedian/:id' render={(props) => <EditComedian {...props} />} />
-        <Route path='/comedianList' component={ComedianList} comedians={this.state.comedians} />
-        <Route path='/comedianDetail/:id' render={(props) => <ComedianDetail {...props} />} />
-      </>
-    );
-  }
+
 
   //sets state for comedian edits
   handleEditComedian = (comedian) => {
@@ -148,6 +135,26 @@ export default class App extends React.Component {
     })
     console.log('shows after setstate', this.state.shows);
   }
+
+  setLoggedIn = () => {
+    this.setState({ isLoggedIn: true })
+  }
+
+  renderRoutes() {
+    return (
+      <>
+        <Route exact path='/' render={(props) => <LandingPage setLoggedIn={this.setLoggedIn} {...props} />} />
+        <Route path='/showList' component={ShowList} shows={this.state.shows} />
+        <Route path='/showDetail/:id' render={(props) => <ShowDetail {...props} />} />
+        <Route path='/addShow' component={AddShow} />
+        <Route path='/editShow/:id' render={(props) => <EditShow {...props} />} />
+        <Route path='/addComedian' component={AddComedian} />
+        <Route path='/editComedian/:id' render={(props) => <EditComedian {...props} />} />
+        <Route path='/comedianList' component={ComedianList} comedians={this.state.comedians} />
+        <Route path='/comedianDetail/:id' render={(props) => <ComedianDetail {...props} />} />
+      </>
+    );
+  }
   
   render() {
     const value = {
@@ -161,7 +168,7 @@ export default class App extends React.Component {
     }
     return (
       <ApiContext.Provider value={value}>
-        <Nav loggedIn={this.state.loggedIn}/>
+        <Nav isLoggedIn={this.state.isLoggedIn}/>
         <main className='app'>
           {this.renderRoutes()}
         </main>

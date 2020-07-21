@@ -2,6 +2,7 @@ import React from 'react';
 import config from '../../config.js';
 import ApiContext from '../../ApiContext.js';
 import './AddShow.css';
+import TokenService from '../../token-service.js';
 
 export default class AddShow extends React.Component {
 
@@ -35,7 +36,8 @@ export default class AddShow extends React.Component {
     fetch(`${config.REACT_APP_API_ENDPOINT}/api/show`, {
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'authorization': `Bearer ${TokenService.getAuthToken()}`,
         },
         body: JSON.stringify(newShow)
         })

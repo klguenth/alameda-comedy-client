@@ -1,24 +1,56 @@
 import React from 'react';
 import Nav from '../Nav/Nav.js';
+import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import config from '../../config.js';
 import ApiContext from '../../ApiContext.js';
+import TokenService from '../../token-service.js';
    
 export default class LandingPage extends React.Component {
 
-    static defaultProps = {
-        onRegistrationSuccess: () => {},
-        onLoginSuccess: () => {},
-        submitAuth: () => {}
+    constructor(props) {
+        super(props);
+        this.renderLoginLink = this.renderLoginLink.bind(this);
+        this.renderLogoutLink = this.renderLogoutLink.bind(this);
     }
     static contextType = ApiContext;
+
+    renderLoginLink() {
+        this.context.isLoggedIn = true;
+    }
+
+    renderLogoutLink() {
+        this.context.isLoggedIn = false;
+    }
+
+    handleSubmitBasicAuth = event => {
+        event.preventDefault()
+        const { email, pw } = event.target
+
+        TokenService.saveAuthToken(
+            TokenService.makeBasicAuthToken(email.value, pw.value)
+        )
+    }
+
+    // renderLoginLink() {
+    //     return (
+    //         <div className="loginLink">
+    //             <Link to='/'>
+    //                 Login
+    //             </Link>
+    //             {TokenService.hasAuthToken()
+    //                 ? this.renderLogoutLink()
+    //                 : this.renderLoginLink()}
+    //         </div>
+    //     )
+    // }
 
     handleSubmitAuth = event => {
         event.preventDefault()
         const newUser = {}
         newUser.email = event.target.email.value;
         newUser.pw = event.target.pw.value;
-        this.props.onLoginSuccess();
+        // this.props.onLoginSuccess();
         
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/auth/login`, {
             method: 'POST',
@@ -35,6 +67,7 @@ export default class LandingPage extends React.Component {
             .then(token => {
                 this.props.history.push('/')
                 this.context.token = token.authToken;
+                this.props.setLoggedIn();
             })
             .catch(error => {
                 console.error({ error })
@@ -71,9 +104,16 @@ export default class LandingPage extends React.Component {
     }
 
     render() {
+        const isLoggedIn = this.context.isLoggedIn;
+        let button;
+        if (isLoggedIn) {
+            button = <button onClick={this.renderLogoutLink} />;
+        } else {
+            button = <button onClick={this.renderLoginLink} />;
+        }
         return (
             <>
-                <Nav />
+                {/* <Nav isLoggedIn={this.context.isLoggedIn} /> */}
                 <div className="landingContainer">
                     <img src="/images/logo.png" height="200px" alt="alameda comedy logo" />
                     <header role="banner">
