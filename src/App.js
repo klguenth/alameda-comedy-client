@@ -13,6 +13,7 @@ import ApiContext from './ApiContext';
 import { findComedian, findShow } from './helpers.js';
 import config from './config.js';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import TokenService from './token-service.js';
 import './App.css';
 
 export default class App extends React.Component {
@@ -27,7 +28,8 @@ export default class App extends React.Component {
       handleEditShow: this.handleEditShow.bind(this),
       handleDeleteComedian: this.handleDeleteComedian.bind(this),
       handleEditComedian: this.handleEditComedian.bind(this),
-      setLoggedIn: this.setLoggedIn.bind(this)
+      setLoggedIn: this.setLoggedIn.bind(this),
+      handleLogout: this.handleLogout.bind(this)
     };
   }
 
@@ -74,7 +76,6 @@ export default class App extends React.Component {
         });
     });
   }
-
 
 
   //sets state for comedian edits
@@ -139,6 +140,12 @@ export default class App extends React.Component {
     this.setState({ isLoggedIn: true })
   }
 
+  handleLogout = () => {
+    TokenService.clearAuthToken()
+    this.setState({isLoggedIn: false})
+    this.props.history.push('/');
+}
+
   renderRoutes() {
     return (
       <>
@@ -159,6 +166,7 @@ export default class App extends React.Component {
     const value = {
       shows: this.state.shows,
       comedians: this.state.comedians,
+      isLoggedIn: this.state.isLoggedIn,
       deleteComedian: this.handleDeleteComedian,
       editComedian: this.handleEditComedian,
       deleteShow: this.handleDeleteShow,
