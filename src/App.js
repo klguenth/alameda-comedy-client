@@ -141,9 +141,9 @@ export default class App extends React.Component {
   }
 
   handleLogout = () => {
+    console.log('handleLogout called');
     TokenService.clearAuthToken()
     this.setState({isLoggedIn: false})
-    this.props.history.push('/');
 }
 
   renderRoutes() {
@@ -171,6 +171,7 @@ export default class App extends React.Component {
       editComedian: this.handleEditComedian,
       deleteShow: this.handleDeleteShow,
       editShow: this.handleEditShow,
+      handleLogout: this.handleLogout
     }
     return (
       <ApiContext.Provider value={value}>

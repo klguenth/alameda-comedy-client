@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import ApiContext from '../../ApiContext';
 import './Nav.css';
 import TokenService from '../../token-service';
+import { withRouter } from "react-router-dom";
 //TODO import context
 //when logged in set token
 //add logout button - clear token from local storage and context
 
-export default class Nav extends React.Component {
+class Nav extends React.Component {
 
     static contextType = ApiContext;
 
@@ -15,7 +16,6 @@ export default class Nav extends React.Component {
         onRegistrationSuccess: () => {},
         onLoginSuccess: () => {},
         submitAuth: () => {},
-        handleLogout: () => {}
     }
 
     render() {
@@ -24,7 +24,13 @@ export default class Nav extends React.Component {
             buttons = <><li><Link to='/'>Home</Link></li>
             <li><Link to='/showList'>Shows</Link></li>
             <li><Link to='/comedianList'>Comedians</Link></li>
-            <li><button onClick={this.handleLogout}>Logout</button></li></>
+            <button 
+                onClick={() => {
+                    this.context.handleLogout()
+                    this.props.history.push('/')
+                }}>
+                    Logout
+            </button></>
         }
         return(
             <nav className="nav">
@@ -35,3 +41,5 @@ export default class Nav extends React.Component {
         )
     }
 }
+
+export default withRouter(Nav)
