@@ -7,6 +7,9 @@ import ApiContext from '../../ApiContext.js';
 import TokenService from '../../token-service.js';
    
 export default class LandingPage extends React.Component {
+    static defaultProps = {
+        onRegistrationSuccess: () => {}
+      }
 
     constructor(props) {
         super(props);
@@ -32,6 +35,7 @@ export default class LandingPage extends React.Component {
         )
     }
 
+    //login form
     handleSubmitAuth = event => {
         event.preventDefault()
         const newUser = {}
@@ -60,6 +64,7 @@ export default class LandingPage extends React.Component {
             })
     }
 
+    //registration form
     handleSubmitUser = event => {
         event.preventDefault()
         const newUser = {}
@@ -82,7 +87,7 @@ export default class LandingPage extends React.Component {
             })
             .then(newUser => {
                 this.props.history.push('/')
-                this.context.submitAuth();
+                // this.context.submitAuth();
             })
             .catch(error => {
                 console.error({ error })
