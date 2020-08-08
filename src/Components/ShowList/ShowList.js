@@ -45,6 +45,7 @@ class ShowList extends React.Component {
           shows: data,
           error: null
         });
+        this.context.shows = data;
       })
       .catch(err => {
         this.setState({

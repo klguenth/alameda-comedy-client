@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import config from '../../config.js';
 import './ComedianList.css';
 import TokenService from '../../token-service.js';
+import ApiContext from '../../ApiContext.js';
 
 export default class ComedianList extends React.Component {
     constructor(props) {
@@ -12,6 +13,8 @@ export default class ComedianList extends React.Component {
             comedians: [],
         }
     }
+
+    static contextType = ApiContext;
 
 //performs initial fetch of comedians
   componentDidMount() {
@@ -35,6 +38,7 @@ export default class ComedianList extends React.Component {
           comedians: data,
           error: null
         });
+        this.context.comedians = data;
       })
       .catch(err => {
         this.setState({

@@ -2,9 +2,9 @@ import React from 'react';
 import config from '../../config.js';
 import ApiContext from '../../ApiContext.js';
 import './EditShow.css';
+import TokenService from '../../token-service.js';
 
 export default class EditShow extends React.Component {
-
 
     static defaultProps = {
         editShow: () => {},
@@ -33,17 +33,18 @@ export default class EditShow extends React.Component {
         modifiedShow.price_general = event.target.price_general.value;
         modifiedShow.capacity = event.target.capacity.value;
         modifiedShow.comps = event.target.comps.value;
-        modifiedShow.comic_one = event.target.comic_one;
-        modifiedShow.comic_two = event.target.comic_two;
-        modifiedShow.comic_three = event.target.comic_three;
-        modifiedShow.comic_four = event.target.comic_four;
-        modifiedShow.comic_five = event.target.comic_five;
-        modifiedShow.comic_six = event.target.comic_six;
+        modifiedShow.comic_one = event.target.comic_one.value;
+        modifiedShow.comic_two = event.target.comic_two.value;
+        modifiedShow.comic_three = event.target.comic_three.value;
+        modifiedShow.comic_four = event.target.comic_four.value;
+        modifiedShow.comic_five = event.target.comic_five.value;
+        modifiedShow.comic_six = event.target.comic_six.value;
         // modifiedShow.tix_id = event.target.tix_id.value;
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/${showId}`, {
             method: 'PATCH',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `Bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify(modifiedShow),
         })
@@ -57,7 +58,7 @@ export default class EditShow extends React.Component {
         })
         .then((res) => {
             modifiedShow.id = id;
-            this.context.editShow(modifiedShow)
+            // this.context.editShow(modifiedShow)
             this.props.history.push(`/showList`);
         })
         .catch(error => {
@@ -98,6 +99,7 @@ export default class EditShow extends React.Component {
     }
 
     render() {
+        console.log('this.context.shows', this.context.shows);
         const show = this.context.shows.find((show) => 
             +show.id === +this.props.match.params.id)
         return (
