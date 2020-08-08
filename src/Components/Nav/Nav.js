@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ApiContext from '../../ApiContext';
 import './Nav.css';
-import TokenService from '../../token-service';
 import { withRouter } from "react-router-dom";
 //TODO import context
 //when logged in set token

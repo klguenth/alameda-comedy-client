@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav.js';
 import { Link } from 'react-router-dom';
 import config from '../../config.js';
 import './ComedianList.css';
+import TokenService from '../../token-service.js';
 
 export default class ComedianList extends React.Component {
     constructor(props) {
@@ -14,7 +15,13 @@ export default class ComedianList extends React.Component {
 
 //performs initial fetch of comedians
   componentDidMount() {
-    fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian/`)
+    fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian/`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      }
+    })
       .then(res => {
         if(!res.ok) {
           throw new Error('Something went wrong.');

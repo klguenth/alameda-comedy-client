@@ -99,7 +99,7 @@ export default class EditShow extends React.Component {
 
     render() {
         const show = this.context.shows.find((show) => 
-            +show.id == +this.props.match.params.id)
+            +show.id === +this.props.match.params.id)
         return (
             <ApiContext.Consumer>
                 {defaultValue => (

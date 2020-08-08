@@ -40,7 +40,7 @@ export default class ShowDetail extends React.Component {
 
     render() {
         const show = this.context.shows.find((show) => 
-            +show.id == +this.props.match.params.id)
+            +show.id === +this.props.match.params.id)
             console.log('this.context.shows', this.context.shows);
         return (
             <ApiContext.Consumer>

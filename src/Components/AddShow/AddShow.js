@@ -48,7 +48,6 @@ export default class AddShow extends React.Component {
         })
         .then((res) => {
             this.props.history.push(`/showList`)
-            window.location.reload()
         })
         .catch(error => {
             console.error({ error })

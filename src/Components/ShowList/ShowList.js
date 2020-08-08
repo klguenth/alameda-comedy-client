@@ -4,8 +4,16 @@ import config from '../../config.js';
 import { Link, withRouter } from 'react-router-dom';
 import './ShowList.css';
 import ApiContext from '../../ApiContext.js';
+import TokenService from '../../token-service.js';
 
 class ShowList extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      shows: []
+    }
+  }
 
   static defaultProps = {
     editShow: () => {},
@@ -17,7 +25,13 @@ class ShowList extends React.Component {
     
 //performs initial fetch of shows
   componentDidMount() {
-    fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/`)
+    fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      }
+      })
       .then(res => {
         if(!res.ok) {
           throw new Error('Something went wrong.');
@@ -47,7 +61,7 @@ class ShowList extends React.Component {
 }
 
     render() {
-      let shows = this.context.shows.map((show, index) => 
+      let shows = this.state.shows.map((show, index) => 
           <li key={index}>
             {show.title}<br />
             {show.show_date.slice(0, 10)}<br />

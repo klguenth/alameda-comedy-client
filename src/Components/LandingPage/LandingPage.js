@@ -1,6 +1,4 @@
 import React from 'react';
-import Nav from '../Nav/Nav.js';
-import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import config from '../../config.js';
 import ApiContext from '../../ApiContext.js';
@@ -29,7 +27,6 @@ export default class LandingPage extends React.Component {
     handleSubmitBasicAuth = event => {
         event.preventDefault()
         const { email, pw } = event.target
-
         TokenService.saveAuthToken(
             TokenService.makeBasicAuthToken(email.value, pw.value)
         )
@@ -56,6 +53,7 @@ export default class LandingPage extends React.Component {
             })
             .then(token => {
                 this.props.history.push('/')
+                TokenService.saveAuthToken(token.authToken)
                 this.context.token = token.authToken;
                 this.props.setLoggedIn();
             })

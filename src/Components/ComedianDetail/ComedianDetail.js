@@ -47,7 +47,7 @@ export default class ComedianDetail extends React.Component {
 
     render() {
         const comedian = this.context.comedians.find((comedian) =>
-        +comedian.id == +this.props.match.params.id)
+        +comedian.id === +this.props.match.params.id)
         return (
             <ApiContext.Consumer>
                 {defaultValue => (

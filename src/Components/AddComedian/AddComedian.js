@@ -2,6 +2,7 @@ import React from 'react';
 import config from '../../config.js';
 import ApiContext from '../../ApiContext.js';
 import './AddComedian.css';
+import TokenService from '../../token-service.js';
 
 export default class AddComedian extends React.Component {
 
@@ -39,8 +40,8 @@ export default class AddComedian extends React.Component {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
-            'authorization': 'Bearer ' + this.context.token
-        },
+            'authorization': `Bearer ${TokenService.getAuthToken()}`,
+          },
         body: JSON.stringify(newComedian)
         })
         .then(res => {
@@ -50,7 +51,6 @@ export default class AddComedian extends React.Component {
         })
         .then((res) => {
             this.props.history.push(`/comedianList`)
-            window.location.reload()
         })
         .catch(error => {
             console.error({ error })

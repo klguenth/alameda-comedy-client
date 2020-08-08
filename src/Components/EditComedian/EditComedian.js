@@ -78,14 +78,8 @@ export default class EditComedian extends React.Component {
 
     render() {
         const comedian = this.context.comedians.find((comedian) =>
-            +comedian.id == +this.props.match.params.id)
+            +comedian.id === +this.props.match.params.id)
         return (
-        // let id = this.props.match.params.id;
-        // let index = this.findById(id)
-        // if (!this.context.comedians.length) {
-        //     return <p>Loading...</p>;
-        // }
-        // return (
             <ApiContext.Consumer>
                 {defaultValue => (
                     <div>
