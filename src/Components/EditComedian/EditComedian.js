@@ -1,10 +1,10 @@
 import React from 'react';
 import config from '../../config.js';
 import ApiContext from '../../ApiContext.js';
+import TokenService from '../../token-service.js';
 import './EditComedian.css';
 
 export default class EditComedian extends React.Component {
-
 
     static defaultProps = {
         editComedian: () => {},
@@ -46,7 +46,8 @@ export default class EditComedian extends React.Component {
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian/${comedianId}`, {
             method: 'PATCH',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `Bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify(modifiedComedian),
             })
@@ -59,9 +60,7 @@ export default class EditComedian extends React.Component {
             }
         })
         .then((res) => {
-            console.log('res', res);
             modifiedComedian.id = id;
-            this.context.editComedian(modifiedComedian)
             this.props.history.push(`/comedianList`);
         })
         .catch(error => {

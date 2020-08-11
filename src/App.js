@@ -35,7 +35,8 @@ export default class App extends React.Component {
 
   //performs initial fetch of shows
   componentDidMount() {
-    fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/`)
+    if (this.state.isLoggedIn) {
+      fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/`)
       .then(res => {
         if(!res.ok) {
           throw new Error('Something went wrong.');
@@ -55,27 +56,29 @@ export default class App extends React.Component {
           error: err.message
         });
       });
-    fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian/`)
-      .then(res => {
-        if(!res.ok) {
-          throw new Error('Something went wrong.');
-        }
-        return res;
+      fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian/`)
+        .then(res => {
+          if(!res.ok) {
+            throw new Error('Something went wrong.');
+          }
+          return res;
 
-      })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          comedians: data,
-          error: null
-        });
-      })
-      .catch(err => {
-        this.setState({
-          error: err.message
-        });
-    });
+        })
+        .then(res => res.json())
+        .then(data => {
+          this.setState({
+            comedians: data,
+            error: null
+          });
+        })
+        .catch(err => {
+          this.setState({
+            error: err.message
+          });
+      });
+    }
   }
+
 
 
   //sets state for comedian edits

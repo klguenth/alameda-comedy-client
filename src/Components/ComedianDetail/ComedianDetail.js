@@ -2,6 +2,7 @@ import React from 'react';
 import config from '../../config.js';
 import ApiContext from '../../ApiContext.js';
 import { Link } from 'react-router-dom';
+import TokenService from '../../token-service.js';
 import './ComedianDetail.css';
 
 export default class ComedianDetail extends React.Component {
@@ -21,7 +22,8 @@ export default class ComedianDetail extends React.Component {
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/comedian/${comedianId}`, {
             method: 'DELETE',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `Bearer ${TokenService.getAuthToken()}`,
             },
         })
         .then( res => {
@@ -30,7 +32,6 @@ export default class ComedianDetail extends React.Component {
             return res;
         })
         .then(() => {
-            this.context.deleteComedian(comedianId);
             this.props.history.push('/comedianList')
         })
         .catch(error => {
