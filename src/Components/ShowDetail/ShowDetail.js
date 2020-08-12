@@ -32,7 +32,6 @@ export default class ShowDetail extends React.Component {
             return res;
         })
         .then(() => {
-            // this.context.deleteShow(showId);
             this.props.history.push('/showList')
         })
         .catch(error => {
@@ -43,7 +42,6 @@ export default class ShowDetail extends React.Component {
     render() {
         const show = this.context.shows.find((show) => 
             +show.id === +this.props.match.params.id)
-            console.log('this.context.shows', this.context.shows);
         return (
             <ApiContext.Consumer>
                 {defaultValue => (
@@ -66,7 +64,6 @@ export default class ShowDetail extends React.Component {
                                 <label htmlFor="comics">Comics:</label>
                                 <p>{defaultValue=show.comics}</p>
                             </div>
-                            {/* TODO defaultvalue for select option */}
                             <div className="form-section">
                             <label htmlFor="stage">Stage:</label>
                                 <select name="stage" id="stage">

@@ -39,7 +39,6 @@ export default class EditShow extends React.Component {
         modifiedShow.comic_four = event.target.comic_four.value;
         modifiedShow.comic_five = event.target.comic_five.value;
         modifiedShow.comic_six = event.target.comic_six.value;
-        // modifiedShow.tix_id = event.target.tix_id.value;
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/${showId}`, {
             method: 'PATCH',
             headers: {
@@ -58,7 +57,6 @@ export default class EditShow extends React.Component {
         })
         .then((res) => {
             modifiedShow.id = id;
-            // this.context.editShow(modifiedShow)
             this.props.history.push(`/showList`);
         })
         .catch(error => {
@@ -99,7 +97,6 @@ export default class EditShow extends React.Component {
     }
 
     render() {
-        console.log('this.context.shows', this.context.shows);
         const show = this.context.shows.find((show) => 
             +show.id === +this.props.match.params.id)
         return (

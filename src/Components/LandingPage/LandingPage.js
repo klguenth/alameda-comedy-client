@@ -85,7 +85,6 @@ export default class LandingPage extends React.Component {
             })
             .then(newUser => {
                 this.props.history.push('/')
-                // this.context.submitAuth();
             })
             .catch(error => {
                 console.error({ error })

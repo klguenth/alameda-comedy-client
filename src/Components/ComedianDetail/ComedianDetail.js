@@ -47,7 +47,6 @@ export default class ComedianDetail extends React.Component {
     }
 
     render() {
-        console.log('this.props.match.params', this.props.match.params.id)
         const comedian = this.context.comedians.find((comedian) =>
         +comedian.id === +this.props.match.params.id)
 

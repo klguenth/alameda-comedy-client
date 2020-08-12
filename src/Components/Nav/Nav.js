@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import ApiContext from '../../ApiContext';
 import './Nav.css';
 import { withRouter } from "react-router-dom";
-//TODO import context
-//when logged in set token
-//add logout button - clear token from local storage and context
 
 class Nav extends React.Component {
 
