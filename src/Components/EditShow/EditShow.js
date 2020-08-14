@@ -71,7 +71,8 @@ export default class EditShow extends React.Component {
         fetch(`${config.REACT_APP_API_ENDPOINT}/api/show/${showId}`, {
             method: 'DELETE',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `Bearer ${TokenService.getAuthToken()}`
             },
         })
         .then( res => {
