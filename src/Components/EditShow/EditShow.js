@@ -81,7 +81,6 @@ export default class EditShow extends React.Component {
             return res;
         })
         .then(() => {
-            this.context.deleteShow(showId);
             this.props.history.push('/showList')
         })
         .catch(error => {
