@@ -13,6 +13,9 @@ export default class LandingPage extends React.Component {
         super(props);
         this.renderLoginLink = this.renderLoginLink.bind(this);
         this.renderLogoutLink = this.renderLogoutLink.bind(this);
+        this.state = {
+            error: null
+        }
     }
     static contextType = ApiContext;
 
@@ -87,6 +90,9 @@ export default class LandingPage extends React.Component {
                 this.props.history.push('/')
             })
             .catch(error => {
+                this.setState({
+                    error: error.error
+                })
                 console.error({ error })
             })
     }
@@ -98,6 +104,10 @@ export default class LandingPage extends React.Component {
             button = <button onClick={this.renderLogoutLink} />;
         } else {
             button = <button onClick={this.renderLoginLink} />;
+        }
+        let errorMessage;
+        if (this.state.error) {
+            errorMessage = this.state.error;
         }
         return (
             <>
@@ -122,6 +132,7 @@ export default class LandingPage extends React.Component {
                             <input type="text" name="email" className="email" /><br />
                             <label htmlFor="pw">Password</label>
                             <input type="password" name="pw" className="pw" /><br />
+                            <p>{errorMessage}</p>
                             <button type='submit'>Sign Up</button>
                         </form>
                         <h2>Login</h2>
