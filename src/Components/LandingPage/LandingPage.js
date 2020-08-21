@@ -110,12 +110,12 @@ export default class LandingPage extends React.Component {
             button = <button onClick={this.renderLoginLink} />;
         }
         let registerError;
-        if (this.state.error) {
-            registerError = this.state.error;
+        if (this.state.registerError) {
+            registerError = this.state.registerError;
         }
         let loginError;
-        if (this.state.error) {
-            loginError = this.state.error;
+        if (this.state.loginError) {
+            loginError = this.state.loginError;
         }
         return (
             <>
