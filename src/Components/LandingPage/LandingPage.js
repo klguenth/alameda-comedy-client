@@ -14,7 +14,8 @@ export default class LandingPage extends React.Component {
         this.renderLoginLink = this.renderLoginLink.bind(this);
         this.renderLogoutLink = this.renderLogoutLink.bind(this);
         this.state = {
-            error: null
+            loginError: null,
+            registerError: null
         }
     }
     static contextType = ApiContext;
@@ -61,6 +62,9 @@ export default class LandingPage extends React.Component {
                 this.props.setLoggedIn();
             })
             .catch(error => {
+                this.setState({
+                    loginError: error.error
+                })
                 console.error({ error })
             })
     }
@@ -91,7 +95,7 @@ export default class LandingPage extends React.Component {
             })
             .catch(error => {
                 this.setState({
-                    error: error.error
+                    registerError: error.error
                 })
                 console.error({ error })
             })
@@ -105,9 +109,13 @@ export default class LandingPage extends React.Component {
         } else {
             button = <button onClick={this.renderLoginLink} />;
         }
-        let errorMessage;
+        let registerError;
         if (this.state.error) {
-            errorMessage = this.state.error;
+            registerError = this.state.error;
+        }
+        let loginError;
+        if (this.state.error) {
+            loginError = this.state.error;
         }
         return (
             <>
@@ -129,20 +137,21 @@ export default class LandingPage extends React.Component {
                             <label htmlFor="fullname">Full Name</label>
                             <input type="text" name="full_name" id="full_name" /><br />
                             <label htmlFor="email">Email</label>
-                            <input type="text" name="email" className="email" /><br />
+                            <input type="email" name="email" className="email" /><br />
                             <label htmlFor="pw">Password</label>
                             <input type="password" name="pw" className="pw" /><br />
-                            <p>{errorMessage}</p>
                             <button type='submit'>Sign Up</button>
                         </form>
+                        <p>{registerError}</p>
                         <h2>Login</h2>
                         <form onSubmit={this.handleSubmitAuth} className='login-form'>
                             <label htmlFor="email">Email</label>
-                            <input type="text" name="email" className="email" /><br />
+                            <input type="email" name="email" className="email" /><br />
                             <label htmlFor="pw">Password</label>
                             <input type="password" name="pw" className="pw" /><br />
                             <button type='submit'>Login</button>
                         </form>
+                        <p>{loginError}</p>
                     </section>
                 </div>
             </>
