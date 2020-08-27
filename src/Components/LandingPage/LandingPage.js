@@ -15,7 +15,7 @@ export default class LandingPage extends React.Component {
         this.renderLogoutLink = this.renderLogoutLink.bind(this);
         this.state = {
             loginError: null,
-            registerError: null
+            registerError: null,
         }
     }
     static contextType = ApiContext;
@@ -151,6 +151,7 @@ export default class LandingPage extends React.Component {
                             <input type="password" name="pw" className="pw" /><br />
                             <button type='submit'>Login</button>
                         </form>
+                        <p>Following succesful login, the navigation bar will appear at the top of the screen.</p>
                         <p>{loginError}</p>
                     </section>
                 </div>
