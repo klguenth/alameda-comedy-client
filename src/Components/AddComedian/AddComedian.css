@@ -16,16 +16,11 @@ button {
         display: block;
     }
     .form-section {
-        text-align: left;
+        text-align: center;
         padding: 5px;
     }
 
-    .form-section label {
-        padding-right: 5px;
-    }
-
     .form-section input {
-        float: right;
         width: 50%;
     }
 
