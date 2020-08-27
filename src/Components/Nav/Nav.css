@@ -38,3 +38,8 @@
     padding: 10px;
     border: 2px solid #C9C9C8;
 }
+
+.nav button:hover {
+    border: 2px solid #FBF708;
+    color: #010101;
+}
