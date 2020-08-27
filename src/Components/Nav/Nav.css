@@ -32,3 +32,8 @@
 .nav ul li a {
     text-decoration: none;
 }
+
+.nav button {
+    font-size: 16px;
+    padding: 10px;
+}
