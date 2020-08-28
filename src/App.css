@@ -37,3 +37,22 @@ a {
 ul {
     padding: 0px;
 }
+
+@media screen and (min-width: 400px) {
+    .app {
+        text-align: center;
+        text-align: center;
+        padding: 30px;
+        margin: 0px;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .app {
+        text-align: center;
+        text-align: center;
+        padding: 30px;
+        display: block;
+    }
+}
