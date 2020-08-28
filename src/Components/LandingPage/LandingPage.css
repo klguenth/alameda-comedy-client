@@ -54,6 +54,8 @@
         padding: 30px;
         margin: 0px;
         display: block;
+        border: 2px solid #0338FF;
+        border-radius: 5px;
     }
     .form-section {
         text-align: center;
@@ -76,5 +78,7 @@
         text-align: center;
         padding: 30px;
         display: block;
+        border: 2px solid #0338FF;
+        border-radius: 5px;
     }
 }
