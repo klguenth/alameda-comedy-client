@@ -14,18 +14,16 @@
 }
 
 .signup-form label {
-    float: left;
-    padding-left: 50px;
+    text-align: right;
 }
 
 .signup-form input {
-    float: right;
-    margin: 0 100px;
+    margin: 0 10px;
 }
 
 .signup-form button {
     align-items: center;
-    margin: 10px 100px;
+    margin: 10px 10px;
 }
 
 .login-form {
@@ -33,18 +31,30 @@
 }
 
 .login-form label {
-    float: left;
-    padding-left: 50px;
+    text-align: right;
 }
 
 .login-form input {
-    float: right;
-    margin: 0 100px;
+    margin: 0 10px;
 }
 
 .login-form button {
     align-items: center;
-    margin: 10px 100px;
+    margin: 10px 10px;
+}
+
+.loginForms {
+    width: 50%;
+    text-align: right;
+    margin: 0 auto;
+}
+
+.loginForms h2 {
+    text-align: center;
+}
+
+.loginForms p {
+    text-align: left;
 }
 
 @media screen and (min-width: 400px) {
@@ -54,8 +64,6 @@
         padding: 30px;
         margin: 0px;
         display: block;
-        border: 2px solid #0338FF;
-        border-radius: 5px;
     }
     .form-section {
         text-align: center;
@@ -76,9 +84,7 @@
     .landingContainer {
         text-align: center;
         text-align: center;
-        padding: 30px;
+        padding: 5px;
         display: block;
-        border: 2px solid #0338FF;
-        border-radius: 5px;
     }
 }

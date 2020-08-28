@@ -131,7 +131,7 @@ export default class LandingPage extends React.Component {
                         <h2>Create and view performer demographics</h2>
                         <p>Create and maintain records of scheduled performers- including style, influences, frequency, etc.</p>
                     </section>
-                    <section>
+                    <section className="loginForms">
                         <h2>Sign Up</h2>
                         <form onSubmit={this.handleSubmitUser} className='signup-form'>
                             <label htmlFor="fullname">Full Name</label>
