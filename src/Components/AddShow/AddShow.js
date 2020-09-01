@@ -18,14 +18,14 @@ export default class AddShow extends React.Component {
         newShow.title = event.target.title.value;
         newShow.show_date = event.target.show_date.value;
         newShow.show_time = event.target.show_time.value;
-        newShow.comics = event.target.comics.value;
+        newShow.comics = event.target.comics.value || 0;
         newShow.stage = event.target.stage.value;
         newShow.details = event.target.details.value;
         newShow.notes = event.target.notes.value;
-        newShow.price_general = event.target.price_general.value;
-        newShow.price_premium = event.target.price_premium.value;
-        newShow.capacity = event.target.capacity.value;
-        newShow.comps = event.target.comps.value;
+        newShow.price_general = event.target.price_general.value || 0;
+        newShow.price_premium = event.target.price_premium.value || 0;
+        newShow.capacity = event.target.capacity.value || 0;
+        newShow.comps = event.target.comps.value || 0;
         newShow.comic_one = event.target.comic_one.value;
         newShow.comic_two = event.target.comic_two.value;
         newShow.comic_three = event.target.comic_three.value;
@@ -76,7 +76,7 @@ export default class AddShow extends React.Component {
                         </div>
                         <div className="form-section">
                             <label htmlFor="comics">Comics</label>
-                            <input type="number" placeholder="Search" name="comics" id="comics"/>
+                            <input type="number" placeholder="0" name="comics" id="comics"/>
                         </div>
                         <div className="form-section">
                         <label htmlFor="stage">Stage</label>

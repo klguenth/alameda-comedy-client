@@ -35,3 +35,9 @@ a {
 ul {
     padding: 0px;
 }
+
+@media screen and (min-width: 320px) {
+    .app {
+        width: 100%;
+    }
+}
