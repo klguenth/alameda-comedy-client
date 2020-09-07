@@ -2,6 +2,16 @@
     box-sizing: border-box;
 }
 
+a {
+    background-color: #000000;
+    color: #efefef;
+}
+
+.addShowButton {
+    border: 2px solid #C9C9C8;
+    background-color: #010101;
+}
+
 .listMain {
     display: flex;
     flex-direction: column;
@@ -12,10 +22,46 @@
 
 .show li {
     list-style-type: none;
+    background-color: #efefef;
 }
 
 .show ul {
     justify-content: center;
     margin: 30px;
     padding: 0px;
+}
+
+.showItem {
+    background-color: #efefef;
+    border-radius: 5px;
+    color: #000000;
+    padding: 30px 40px;
+    margin: 10px 0px;
+}
+
+.showItem button {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #efefef;
+    color: #000000;
+}
+
+.detailButton {
+    background-color: #efefef;
+    color: #000000;
+}
+
+.detailButton:hover {
+    border: solid 5px #000000;
+    padding: 5px;
+}
+
+.editButton {
+    background-color: #efefef;
+    color: #000000;
+}
+
+.showHeader {
+    background-color: #efefef;
+    color: #000000;
 }

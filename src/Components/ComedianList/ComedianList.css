@@ -18,6 +18,19 @@
     width: 40%;
 }
 
+.comedianItem {
+    background-color: #efefef;
+    border-radius: 5px;
+    color: #000000;
+    padding: 30px 40px;
+    margin: 10px 0px;
+}
+
+.addComedianButton {
+    border: 2px solid #C9C9C8;
+    background-color: #010101;
+}
+
 ul {
     list-style-type: none;
 }
@@ -29,7 +42,21 @@ button {
     border: 1px solid #C9C9C8;
     border-radius: 5px;
     padding: 5px;
+    background-color: #efefef;
+    color: #000000;
 }
- button:hover {
-    border: 1px solid #FBF708;
- }
+
+ .detailButtonComedian {
+    background-color: #efefef;
+    color: #000000;
+}
+
+.showHeader {
+    background-color: #efefef;
+    color: #000000;
+}
+
+a {
+    background-color: #efefef;
+    color: #000000;
+}

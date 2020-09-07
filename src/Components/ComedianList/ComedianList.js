@@ -49,13 +49,13 @@ export default class ComedianList extends React.Component {
 
     render() {
         let comedian = this.state.comedians.map((comedian,index) => 
-            <li key={index}>
+            <li key={index} className="comedianItem">
                 {comedian.first_name}
                 {' '}
                 {comedian.last_name}<br />
                 {comedian.phone}<br />
                 {comedian.email}<br />
-                <button><Link to={`/comedianDetail/${comedian.id}`} className='detailButton' aria-label='detail button'>Details</Link></button>
+                <button><Link to={`/comedianDetail/${comedian.id}`} className='detailButtonComedian' aria-label='detail button'>Details</Link></button>
                 <button><Link to={`/editComedian/${comedian.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
             </li>
             );
@@ -65,7 +65,7 @@ export default class ComedianList extends React.Component {
                   <header className='listHeader'>
                       <h1>Comedians</h1>
                   </header>
-                  <button><Link to='/addComedian'>Add Comedian</Link></button>
+                  <button className="addComedianButton"><Link to='/addComedian'>Add Comedian</Link></button>
                   <ul className='listContainer'>
                       {comedian}
                   </ul>

@@ -2,16 +2,71 @@
 .form-section {
     text-align: left;
     padding: 5px;
+    background-color: #efefef;
+    border-radius: 5px;
+    color: #000000;
+    padding: 20px 40px;
+    margin: 10px 0px;
+}
+
+.form-section-title {
+    background-color: #efefef;
+    color: #000000;
+    font-size: 20px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.form-section {
+    border-bottom: 1px solid #000000;
+}
+
+#record-show {
+    background-color: #efefef;
+    border-radius: 5px;
+    color: #000000;
+    padding: 30px 40px;
 }
 
 #record-show label {
-    margin: 50%;
+    margin: auto;
+    background-color: #efefef;
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 #record-show p {
     margin: auto;
+    background-color: #efefef;
+    color: #000000;
+    text-align: right;
 }
 
 * {
     box-sizing: border-box;
+}
+
+.deleteButton {
+    background-color: #efefef;
+    color: #000000;
+}
+
+.editButton {
+    background-color: #efefef;
+    color: #000000;
+}
+
+button {
+    background-color: #efefef;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+.deleteButton:hover {
+    border: solid 5px #000000;
+    color: #000000;
+    padding: 5px;
 }

@@ -23,6 +23,7 @@
 .nav ul li:hover {
     border: 2px solid #FBF708;
     color: #010101;
+    padding: 10px;
 }
 
 .nav ul li:visited {
@@ -37,8 +38,11 @@
     font-size: 16px;
     padding: 10px;
     border: 2px solid #C9C9C8;
+    background-color: #010101;
+    color: #C9C9C8;
 }
 
 .nav button:hover {
     border: 2px solid #FBF708;
+    padding: 10px;
 }

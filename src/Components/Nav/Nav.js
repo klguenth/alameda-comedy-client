@@ -16,8 +16,11 @@ class Nav extends React.Component {
 
     render() {
         let buttons;
+        let logo;
         if (this.props.isLoggedIn) {
-            buttons = <><li><Link to='/'>Home</Link></li>
+            logo = <img src="/images/logo.png" height="75px" alt="alameda comedy logo" className="navLogo" />
+            buttons = <>
+            <li className="homeLink"><Link to='/'>Home</Link></li>
             <li><Link to='/showList'>Shows</Link></li>
             <li><Link to='/comedianList'>Comedians</Link></li>
             <button 
@@ -29,11 +32,14 @@ class Nav extends React.Component {
             </button></>
         }
         return(
-            <nav className="nav">
-                <ul>
-                    {buttons}
-                </ul>
-            </nav>
+            <>
+                <nav className="nav">
+                    {logo}
+                    <ul>
+                        {buttons}
+                    </ul>
+                </nav>
+            </>
         )
     }
 }

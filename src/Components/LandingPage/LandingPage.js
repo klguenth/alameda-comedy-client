@@ -56,10 +56,10 @@ export default class LandingPage extends React.Component {
                     : res.json()
             })
             .then(token => {
-                this.props.history.push('/')
                 TokenService.saveAuthToken(token.authToken)
                 this.context.token = token.authToken;
                 this.props.setLoggedIn();
+                this.props.history.push('/showList')
             })
             .catch(error => {
                 this.setState({
@@ -117,6 +117,34 @@ export default class LandingPage extends React.Component {
         if (this.state.loginError) {
             loginError = this.state.loginError;
         }
+
+        let showForms;
+        if(!isLoggedIn) {
+            showForms =                     
+                <section className="loginForms">
+                    <h2>Sign Up</h2>
+                    <form onSubmit={this.handleSubmitUser} className='signup-form'>
+                        <label htmlFor="fullname">Full Name</label>
+                        <input type="text" name="full_name" id="full_name" /><br />
+                        <label htmlFor="email">Email</label>
+                        <input type="email" name="email" className="email" /><br />
+                        <label htmlFor="pw">Password</label>
+                        <input type="password" name="pw" className="pw" /><br />
+                        <button type='submit'>Sign Up</button>
+                    </form>
+                    <p>{registerError}</p>
+                    <h2>Login</h2>
+                    <form onSubmit={this.handleSubmitAuth} className='login-form'>
+                        <label htmlFor="email">Email</label>
+                        <input type="email" name="email" className="email" /><br />
+                        <label htmlFor="pw">Password</label>
+                        <input type="password" name="pw" className="pw" /><br />
+                        <button type='submit'>Login</button>
+                    </form>
+                    <p>Following succesful login, the navigation bar will appear at the top of the page.</p>
+                    <p>{loginError}</p>
+                </section>
+        }
         return (
             <>
                 <div className="landingContainer">
@@ -131,29 +159,7 @@ export default class LandingPage extends React.Component {
                         <h2>Create and view performer demographics</h2>
                         <p>Create and maintain records of scheduled performers- including style, influences, frequency, etc.</p>
                     </section>
-                    <section className="loginForms">
-                        <h2>Sign Up</h2>
-                        <form onSubmit={this.handleSubmitUser} className='signup-form'>
-                            <label htmlFor="fullname">Full Name</label>
-                            <input type="text" name="full_name" id="full_name" /><br />
-                            <label htmlFor="email">Email</label>
-                            <input type="email" name="email" className="email" /><br />
-                            <label htmlFor="pw">Password</label>
-                            <input type="password" name="pw" className="pw" /><br />
-                            <button type='submit'>Sign Up</button>
-                        </form>
-                        <p>{registerError}</p>
-                        <h2>Login</h2>
-                        <form onSubmit={this.handleSubmitAuth} className='login-form'>
-                            <label htmlFor="email">Email</label>
-                            <input type="email" name="email" className="email" /><br />
-                            <label htmlFor="pw">Password</label>
-                            <input type="password" name="pw" className="pw" /><br />
-                            <button type='submit'>Login</button>
-                        </form>
-                        <p>Following succesful login, the navigation bar will appear at the top of the page.</p>
-                        <p>{loginError}</p>
-                    </section>
+                    {showForms}
                 </div>
             </>
         )

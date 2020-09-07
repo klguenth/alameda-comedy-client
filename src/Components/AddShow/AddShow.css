@@ -9,21 +9,29 @@
 
 .form-section label {
     padding-right: 5px;
+    background-color: #efefef;
+    color: #000000;
 }
 
 .form-section input {
     float: right;
     width: 50%;
+    background-color: #efefef;
+    color: #000000;
 }
 
 .form-section select {
     float: right;
     width: 50%;
+    background-color: #efefef;
+    color: #000000;
 }
 
 .form-section textarea {
     display: block;
     width: 100%;
+    background-color: #efefef;
+    color: #000000;
 }
 
 @media screen and (min-width: 400px) {

@@ -48,6 +48,7 @@ export default class ShowDetail extends React.Component {
                     <div className="show">
                     <section className="record-show">
                         <form id="record-show">
+                            <h1 className="form-section-title">Show Details</h1>
                             <div className="form-section">
                                 <label htmlFor="title">Title:</label>
                                 <p>{defaultValue=show.title}</p>
@@ -122,8 +123,8 @@ export default class ShowDetail extends React.Component {
                                 <label htmlFor="comic-name">6. Comic Name</label>
                                 <p>{defaultValue=show.comic_six}</p>
                             </div>
-                            <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
-                            <button type="delete" onClick={this.handleDeleteShow}>Delete</button>
+                            <button><Link to={`/editShow/${show.id}`} className="editButton" aria-label="edit button">Edit</Link></button>
+                            <button type="delete" onClick={this.handleDeleteShow} className="deleteButton" aria-label="delete button">Delete</button>
                         </form>
                     </section> 
                     </div>

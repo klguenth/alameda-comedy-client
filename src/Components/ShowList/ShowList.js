@@ -63,10 +63,10 @@ class ShowList extends React.Component {
 
     render() {
       let shows = this.state.shows.map((show, index) => 
-          <li key={index}>
-            {show.title}<br />
-            {show.show_date.slice(0, 10)}<br />
-            {show.show_time}<br />
+          <li key={index} className="showItem">
+            <h3 className="showHeader">Show Title: </h3>{show.title}<br />
+            <h3 className="showHeader">Show Date: </h3>{show.show_date.slice(0, 10)}<br />
+            <h3 className="showHeader">Show Time: </h3>{show.show_time}<br />
             <button><Link to={`/showDetail/${show.id}`} className='detailButton' aria-label='detail button'>Details</Link></button>
             <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
           </li>
@@ -80,7 +80,7 @@ class ShowList extends React.Component {
                   <header role="banner">
                     <h1>Shows</h1>
                   </header>
-                  <button><Link to='/addShow'>Add Show</Link></button>
+                  <button className="addShowButton"><Link to='/addShow'>Add Show</Link></button>
                   <ul>
                     {shows}
                   </ul>

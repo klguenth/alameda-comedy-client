@@ -10,7 +10,6 @@
     align-items: center;
     text-align: center;
     margin: auto;
-    padding: 30px;
     width: 50%;
 }
 
@@ -30,6 +29,8 @@ button:hover {
 
 a {
     text-decoration: none;
+    background-color: #000000;
+    color: #efefef;
 }
 
 ul {

@@ -102,7 +102,7 @@ export default class EditShow extends React.Component {
         return (
             <ApiContext.Consumer>
                 {defaultValue => (
-                    <div>
+                    <div className="record-show-main">
                         <header>
                             <h1>Edit Show</h1>
                         </header>
@@ -159,7 +159,7 @@ export default class EditShow extends React.Component {
                                     <input type="number" min="1" step="any" name="comps" id="comps" defaultValue={show.comps} />
                                 </div>
                                 <header>
-                                    <h1>Lineup</h1>
+                                    <h1 className="lineupHeader">Lineup</h1>
                                 </header>
                                     <div className="form-section">
                                         <label htmlFor="comic_one">1. Comic Name</label>
