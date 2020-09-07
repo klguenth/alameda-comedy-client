@@ -85,8 +85,8 @@ export default class EditComedian extends React.Component {
                     <header>
                         <h1>Edit Comedian</h1>
                     </header>
-                    <section>
-                        <form id="record-comic" onSubmit={this.handleEditComedian}>
+                    <section className="record-comic">
+                        <form onSubmit={this.handleEditComedian}>
                             <div className="form-section">
                                 <label htmlFor="first_name">First Name</label>
                                 <input type="text" name="first_name" defaultValue={comedian.first_name} required />
