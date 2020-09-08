@@ -45,7 +45,6 @@
 
 .loginForms {
     width: 50%;
-    text-align: right;
     margin: 0 auto;
 }
 
@@ -55,6 +54,18 @@
 
 .loginForms p {
     text-align: left;
+}
+
+label {
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
 }
 
 @media screen and (min-width: 400px) {

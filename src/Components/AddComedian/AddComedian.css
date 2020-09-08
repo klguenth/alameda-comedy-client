@@ -24,6 +24,7 @@ button {
 
 .form-section {
     border-bottom: 0;
+    line-height: 1.25em;
 }
 
 .form-section p {

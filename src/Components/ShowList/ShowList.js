@@ -67,8 +67,10 @@ class ShowList extends React.Component {
             <h3 className="showHeader">Show Title: </h3>{show.title}<br />
             <h3 className="showHeader">Show Date: </h3>{show.show_date.slice(0, 10)}<br />
             <h3 className="showHeader">Show Time: </h3>{show.show_time}<br />
-            <button><Link to={`/showDetail/${show.id}`} className='detailButton' aria-label='detail button'>Details</Link></button>
-            <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
+            <div className="controls">
+              <button><Link to={`/showDetail/${show.id}`} className='detailButton' aria-label='detail button'>Details</Link></button>
+              <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
+            </div>
           </li>
           );
         return (
