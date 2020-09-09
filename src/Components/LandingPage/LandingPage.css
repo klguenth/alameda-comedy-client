@@ -39,7 +39,6 @@
 }
 
 .login-form button {
-    align-items: center;
     margin: 10px 10px;
 }
 
@@ -56,6 +55,10 @@
     text-align: left;
 }
 
+.loginButton {
+    float: center;
+}
+
 label {
     display: inline-block;
     float: left;
@@ -68,9 +71,15 @@ input {
   float: left;
 }
 
+button:hover {
+    background-color: #cdcdcd;
+    color: #000000;
+    transition: .3s ease-in;
+    border: 1px solid #000000;
+}
+
 @media screen and (min-width: 400px) {
     .landingContainer {
-        text-align: center;
         text-align: center;
         padding: 30px;
         margin: 0px;
@@ -89,6 +98,10 @@ input {
         display: block;
         width: 100%;
     }
+
+    .signup-form label {
+        text-align: right;
+    }
 }
 
 @media screen and (min-width: 320px) {
@@ -97,5 +110,13 @@ input {
         text-align: center;
         padding: 5px;
         display: block;
+    }
+
+    .login-form label {
+        width: 50%;
+    }
+
+    .signup-form label {
+        width: 50%;
     }
 }

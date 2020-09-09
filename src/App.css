@@ -21,13 +21,22 @@ button {
 }
 
 button:hover {
-    border: 1px solid #FBF708;
+    background-color: #cdcdcd;
+    color: #000000;
+    transition: .3s ease-in;
+    border: 1px solid #000000;
 }
 
 a {
     text-decoration: none;
     background-color: #000000;
     color: #efefef;
+}
+
+a:hover {
+    background-color: #cdcdcd;
+    color: #000000;
+    transition: .3s ease-in;
 }
 
 ul {

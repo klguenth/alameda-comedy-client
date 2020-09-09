@@ -16,14 +16,14 @@
 }
 
 .comedianItem button {
-    border: 2px solid #000000;
+    border: 1px solid #000000;
     border-radius: 5px;
     background-color: #efefef;
     color: #000000;
 }
 
 .comedianItem button:hover {
-    border: solid 5px #000000;
+    border: solid 1px #000000;
     color: #efefef;
     padding: 5px;
 }

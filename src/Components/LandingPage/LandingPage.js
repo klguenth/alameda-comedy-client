@@ -130,7 +130,7 @@ export default class LandingPage extends React.Component {
                         <input type="email" name="email" className="email" /><br />
                         <label htmlFor="pw">Password</label>
                         <input type="password" name="pw" className="pw" /><br />
-                        <button type='submit'>Sign Up</button>
+                        <button type="submit" className="loginButton">Sign Up</button>
                     </form>
                     <p>{registerError}</p>
                     <h2>Login</h2>
@@ -139,7 +139,7 @@ export default class LandingPage extends React.Component {
                         <input type="email" name="email" className="email" /><br />
                         <label htmlFor="pw">Password</label>
                         <input type="password" name="pw" className="pw" /><br />
-                        <button type='submit'>Login</button>
+                        <button type="submit" className="loginButton">Login</button>
                     </form>
                     <p>Following succesful login, the navigation bar will appear at the top of the page.</p>
                     <p>{loginError}</p>

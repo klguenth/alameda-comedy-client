@@ -21,8 +21,10 @@
 }
 
 .nav ul li:hover {
-    border: 2px solid #FBF708;
-    color: #010101;
+    background-color: #cdcdcd;
+    color: #000000;
+    transition: .3s ease-in;
+    border: 1px solid #000000;
     padding: 10px;
 }
 
@@ -43,6 +45,9 @@
 }
 
 .nav button:hover {
-    border: 2px solid #FBF708;
+    background-color: #cdcdcd;
+    color: #000000;
+    transition: .3s ease-in;
+    border: 1px solid #000000;
     padding: 10px;
 }
