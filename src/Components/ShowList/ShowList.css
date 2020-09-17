@@ -1,24 +1,12 @@
-* {
-    box-sizing: border-box;
-}
 
-a {
-    background-color: #000000;
-    color: #efefef;
-}
 
-.addShowButton {
-    border: 1px solid #C9C9C8;
-    background-color: #010101;
-}
-
-.listMain {
+.showListMain {
     text-align: center;
     margin: auto;
     width: 50%;
 }
 
-.show li {
+/* .show li {
     list-style-type: none;
     background-color: #efefef;
 }
@@ -29,6 +17,16 @@ a {
     padding: 0px;
 }
 
+.show {
+    background-color: #efefef;
+    color: #000000;
+} */
+
+.addShowButton a {
+    background-color: #efefef;
+    color: #000000;
+}
+
 .showItem {
     background-color: #efefef;
     border-radius: 5px;
@@ -37,38 +35,18 @@ a {
     margin: 10px 0px;
 }
 
-.showItem button {
-    border: 1px solid #000000;
-    border-radius: 5px;
+/* .showHeader {
     background-color: #efefef;
     color: #000000;
+    margin-bottom: 7px;
+} */
+
+.showListControls {
+    margin-top: 20px;
+    background-color: #efefef;
 }
 
 .detailButton {
     background-color: #efefef;
     color: #000000;
-    margin-top: 20px;
-}
-
-.detailButton:hover {
-    background-color: #cdcdcd;
-    border-color: #000000;
-    padding: 5px;
-}
-
-.editButton {
-    background-color: #efefef;
-    color: #000000;
-    margin-top: 20px;
-}
-
-.showHeader {
-    background-color: #efefef;
-    color: #000000;
-    margin-bottom: 7px;
-}
-
-.controls {
-    margin-top: 20px;
-    background-color: #efefef;
 }

@@ -56,91 +56,81 @@ export default class AddShow extends React.Component {
 
     render() {
         return (
-            <div className="show">
-                <header>
-                    <h1>New Show</h1>
-                </header>
-                <section className="record-show">
-                    <form onSubmit={this.handleAddShow}>
-                        <div className="form-section">
-                            <label htmlFor="title">Title</label>
-                            <input type="text" id="title" name="title" placeholder="Amateur Night" required />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="show_date">Date</label>
-                            <input type="date" id="date" name="show_date" min="2020-04-25" max="2050-01-01" required/>
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="show_time">Time</label>
-                            <input type="time" id="show_time" name="show_time" min="12:00" max="23:00" placeholder="Select time" required/>
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="comics">Comics</label>
-                            <input type="number" placeholder="0" name="comics" id="comics"/>
-                        </div>
-                        <div className="form-section">
-                        <label htmlFor="stage">Stage</label>
-                            <select name="stage" id="stage">
-                                <option value="patio">patio</option>
-                                <option value="showroom">showroom</option>
-                            </select>
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="details">Details</label>
-                            <input type="text" id="details" name="details" required />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="notes">Notes</label>
-                            <textarea name="notes" rows="10" id="notes" required></textarea>
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="price_general">General Price</label>
-                            <input type="number" min="1" step="any" name="price_general" id="price_general" />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="price_premium">Premium Price</label>
-                            <input type="number" min="1" step="any" name="price_premium" id="price_premium" />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="capacity">Capacity</label>
-                            <input type="number" min="1" step="any" name="capacity" id="capacity" />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="comps">Comps</label>
-                            <input type="number" min="1" step="any" name="comps" id="comps" />
-                        </div>
-                <header>
-                    <h1>Lineup</h1>
-                </header>
-                        <div className="form-section">
-                            <label htmlFor="comic_one">1. Comic Name</label>
-                            <input type="text" name="comic_one" placeholder="Name" />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="comic_two">2. Comic Name</label>
-                            <input type="text" name="comic_two" placeholder="Name" />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="comic_three">3. Comic Name</label>
-                            <input type="text" name="comic_three" placeholder="Name" />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="comic_four">4. Comic Name</label>
-                            <input type="text" name="comic_four" placeholder="Name" />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="comic_five">5. Comic Name</label>
-                            <input type="text" name="comic_five" placeholder="Name" />
-                        </div>
-                        <div className="form-section">
-                            <label htmlFor="comic_six">6. Comic Name</label>
-                            <input type="text" name="comic_six" placeholder="Name" />
-                        </div>
-                        <button type="reset">Reset</button>
-                        <button type="submit">Submit</button>
-                    </form>
-                </section> 
-            </div>
+            <form onSubmit={this.handleAddShow} className="new-show">
+                <h1>New Show</h1>
+                    <label htmlFor="title">Title: </label>
+                    <input type="text" id="title" name="title" placeholder="Amateur Night" required />
+                    <label htmlFor="show_date">Date: </label>
+                    <input type="date" id="date" name="show_date" min="2020-04-25" max="2050-01-01" required/>
+
+                    <label htmlFor="show_time">Time: </label>
+                    <input type="time" id="show_time" name="show_time" min="12:00" max="23:00" placeholder="Select time" required/>
+
+
+                    <label htmlFor="comics">Comics: </label>
+                    <input type="number" placeholder="0" name="comics" id="comics"/>
+
+
+                    <label htmlFor="stage">Stage: </label>
+                    <select name="stage" id="stage">
+                        <option value="patio">patio</option>
+                        <option value="showroom">showroom</option>
+                    </select>
+
+
+                    <label htmlFor="details">Details: </label>
+                    <input type="text" id="details" name="details" required />
+
+
+                    <label htmlFor="notes">Notes: </label>
+                    <textarea name="notes" rows="10" id="notes" required></textarea>
+
+
+                    <label htmlFor="price_general">General Price: </label>
+                    <input type="number" min="1" step="any" name="price_general" id="price_general" />
+
+
+                    <label htmlFor="price_premium">Premium Price: </label>
+                    <input type="number" min="1" step="any" name="price_premium" id="price_premium" />
+
+
+                    <label htmlFor="capacity">Capacity: </label>
+                    <input type="number" min="1" step="any" name="capacity" id="capacity" />
+
+
+                    <label htmlFor="comps">Comps: </label>
+                    <input type="number" min="1" step="any" name="comps" id="comps" />
+
+                <h1 className="newShowSection">Lineup</h1>
+
+                    <label htmlFor="comic_one">1. Comic Name: </label>
+                    <input type="text" name="comic_one" placeholder="Name" />
+
+
+                    <label htmlFor="comic_two">2. Comic Name: </label>
+                    <input type="text" name="comic_two" placeholder="Name" />
+
+
+                    <label htmlFor="comic_three">3. Comic Name: </label>
+                    <input type="text" name="comic_three" placeholder="Name" />
+
+
+                    <label htmlFor="comic_four">4. Comic Name: </label>
+                    <input type="text" name="comic_four" placeholder="Name" />
+
+
+                    <label htmlFor="comic_five">5. Comic Name: </label>
+                    <input type="text" name="comic_five" placeholder="Name" />
+
+
+                    <label htmlFor="comic_six">6. Comic Name: </label>
+                    <input type="text" name="comic_six" placeholder="Name" />
+
+                <div className="addShowControls">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
         )
     }
 }

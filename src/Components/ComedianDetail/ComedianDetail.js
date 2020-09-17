@@ -55,45 +55,50 @@ export default class ComedianDetail extends React.Component {
                 {defaultValue => (
                     <div className="comedianDetail">
                         <section>
-                            <form id="record-comic">
-                                <div className="detail-section">
-                                    <label htmlFor="firstName">Name:</label>
-                                    <p>{defaultValue=comedian.first_name}{' '}{defaultValue=comedian.last_name} </p>
+                            <form className="record-comic">
+                                <header>
+                                    <h2 className="comedianHeader">
+                                    {defaultValue=comedian.first_name}{' '}{defaultValue=comedian.last_name}
+                                    </h2>
+                                </header>
+                                <div className="comic-detail-section">
+                                    <label htmlFor="name">Name:</label>
+                                    <span>{defaultValue=comedian.first_name}{' '}{defaultValue=comedian.last_name} </span>
                                 </div>
-                                <div className="form-section">
+                                <div className="comic-detail-section">
                                     <label htmlFor="comic-phone">Phone:</label>
-                                    <p>{defaultValue=comedian.phone} </p>
+                                    <span>{defaultValue=comedian.phone} </span>
                                 </div>
-                                <div className="form-section">
+                                <div className="comic-detail-section">
                                     <label htmlFor="comic-email">Email:</label>
-                                    <p>{defaultValue=comedian.email} </p>
+                                    <span>{defaultValue=comedian.email} </span>
                                 </div>
-                                <div className="form-section">
+                                <div className="comic-detail-section">
                                     <label htmlFor="bio-summary">Bio:</label>
-                                    <p>{defaultValue=comedian.bio} </p>
+                                    <span>{defaultValue=comedian.bio} </span>
                                 </div>
-                                <div className="form-section">
+                                <div className="comic-detail-section">
                                     <label htmlFor="note-summary">Notes:</label>
-                                    <p>{defaultValue=comedian.notes} </p>
+                                    <span>{defaultValue=comedian.notes} </span>
                                 </div>
-                                <div className="form-section">
-                                <label htmlFor="form-section">Category</label>
-                                    <p>{defaultValue=comedian.category}</p>
+                                <div className="comic-detail-section">
+                                <label htmlFor="form-section">Category: </label>
+                                    <span>{defaultValue=comedian.category}</span>
                                 </div>
-                                <div className="form-section">
-                                <label htmlFor="form-section">Gender</label>
-                                    <p>{defaultValue=comedian.gender}</p>
+                                <div className="comic-detail-section">
+                                <label htmlFor="form-section">Gender: </label>
+                                    <span>{defaultValue=comedian.gender}</span>
                                 </div>
-                                <div className="form-section">
-                                    <label htmlFor="age">Age</label>
-                                    <p>{defaultValue=comedian.age} </p>
+                                <div className="comic-detail-section">
+                                    <label htmlFor="age">Age: </label>
+                                    <span>{defaultValue=comedian.age} </span>
                                 </div>
-                                <div className="form-section">
-                                <label htmlFor="race">Race</label>
-                                    <p>{defaultValue=comedian.race}</p>
+                                <div className="comic-detail-section">
+                                <label htmlFor="race">Race: </label>
+                                    <span>{defaultValue=comedian.race}</span>
                                 </div>
-                                <div className="form-section">
-                                    <p>Passed vs. Not Passed</p>
+                                <div className="comic-detail-section">
+                                    <span>Passed vs. Not Passed</span>
                                     <input type="radio" name="passed" value="0" className="passed" defaultChecked={comedian.passed === true}/>
                                         <label htmlFor="passed">
                                             <span>Passed</span>
@@ -103,8 +108,8 @@ export default class ComedianDetail extends React.Component {
                                             <span>Not Passed</span>
                                     </label><br />
                                 </div>
-                                <div className="form-section">
-                                    <p>Clean vs. Explicit</p>
+                                <div className="comic-detail-section">
+                                    <span>Clean vs. Explicit</span>
                                     <input type="radio" name="clean" className="clean" value="1" defaultChecked={comedian.clean === true} />
                                         <label htmlFor="clean">
                                             <span>Clean</span>
@@ -114,32 +119,32 @@ export default class ComedianDetail extends React.Component {
                                             <span>Explicit</span>
                                     </label><br />
                                 </div>
-                                <div className="form-section">
-                                    <label htmlFor="ssn">SSN</label>
-                                    <p>{defaultValue=comedian.ssn} </p>
+                                <div className="comic-detail-section">
+                                    <label htmlFor="ssn">SSN: </label>
+                                    <span>{defaultValue=comedian.ssn}</span>
                                 </div>
-                                <div className="form-section">
-                                    <label htmlFor="street">Address</label>
-                                    <p>{defaultValue=comedian.street} </p>
-                                    <p>{defaultValue=comedian.city} </p>
-                                    <p>{defaultValue=comedian.st} </p>
-                                    <p>{defaultValue=comedian.zip} </p>
+                                <div className="comic-detail-section">
+                                    <label htmlFor="street">Address: </label>
+                                    <span>{defaultValue=comedian.street} </span>
+                                    <span>{defaultValue=comedian.city} </span>
+                                    <span>{defaultValue=comedian.st} </span>
+                                    <span>{defaultValue=comedian.zip} </span>
                                 </div>
-                                <div className="form-section">
+                                <div className="comic-detail-section">
                                     <label htmlFor="website">Website:</label>
-                                    <p>{defaultValue=comedian.website} </p>
+                                    <span>{defaultValue=comedian.website} </span>
                                 </div>
-                                <div className="form-section">
+                                <div className="comic-detail-section">
                                     <label htmlFor="facebook">Facebook Handle:</label>
-                                    <p>{defaultValue=comedian.facebook} </p>
+                                    <span>{defaultValue=comedian.facebook} </span>
                                 </div>
-                                <div className="form-section">
+                                <div className="comic-detail-section">
                                     <label htmlFor="twitter">Twitter Handle:</label>
-                                    <p>{defaultValue=comedian.twitter} </p>
+                                    <span>{defaultValue=comedian.twitter} </span>
                                 </div>
-                                <div className="form-section">
+                                <div className="comic-detail-section">
                                     <label htmlFor="instagram">Instagram Handle:</label>
-                                    <p>{defaultValue=comedian.instagram} </p>
+                                    <span>{defaultValue=comedian.instagram} </span>
                                 </div>
                                 <button><Link to={`/editComedian/${comedian.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
                                 <button type="delete" onClick={this.handleDeleteComedian}>Delete</button>

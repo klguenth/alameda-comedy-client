@@ -1,13 +1,8 @@
-* {
-    box-sizing: border-box;
-    color: #C9C9C8;
-}
 
 .comedianListMain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
+    margin: auto;
+    width: 50%;
 }
 
 .comedianListItem {
@@ -25,25 +20,16 @@
     margin: 10px 0px;
 }
 
-.addComedianButton {
-    border: 1px solid #C9C9C8;
-    background-color: #010101;
-}
-
-ul {
-    list-style-type: none;
-}
-
-button {
-    font-size: 12px;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid #C9C9C8;
-    border-radius: 5px;
-    padding: 5px;
+.addComedianButton a {
     background-color: #efefef;
     color: #000000;
 }
+
+/* button {
+    border: 1px solid #C9C9C8;
+    background-color: #efefef;
+    color: #000000;
+} */
 
  .detailButtonComedian {
     background-color: #efefef;
@@ -55,7 +41,12 @@ button {
     color: #000000;
 }
 
-a {
+/* a {
     background-color: #efefef;
     color: #000000;
+} */
+
+.comicListControls {
+    margin-top: 20px;
+    background-color: #efefef;
 }

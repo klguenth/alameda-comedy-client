@@ -13,15 +13,11 @@
 }
 
 .record-comic label {
-    text-align: left;
+    text-align: right;
     padding: 5px;
 }
 
 .record-comic input {
     float: right;
     width: 50%;
-}
-
-* {
-    box-sizing: border-box;
 }

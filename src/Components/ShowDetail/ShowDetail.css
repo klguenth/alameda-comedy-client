@@ -1,72 +1,75 @@
-
-.form-section {
-    text-align: left;
-    padding: 5px;
-    background-color: #efefef;
-    border-radius: 5px;
-    color: #000000;
-    padding: 20px 40px;
-    margin: 10px 0px;
-}
-
-.form-section-title {
+.showDetail {
+    text-align: center;
+    margin: auto;
+    width: 50%;
     background-color: #efefef;
     color: #000000;
-    font-size: 20px;
-    padding-top: 0px;
-    padding-bottom: 10px;
 }
 
-.form-section {
-    border-bottom: 1px solid #000000;
+.showDetailButton {
+    margin-top: 20px;
+    background-color: #efefef;
 }
 
-#record-show {
+ 
+.show-detail-section {
+    background-color: #efefef;
+    color: #000000;
+}
+/*
+.show-detail-section label {
+    background-color: #efefef;
+    color: #000000;
+}
+
+.show-detail-section span {
+    background-color: #efefef;
+    color: #000000;
+}
+
+.show-detail-section select {
+    background-color: #efefef;
+    color: #000000;
+}
+
+.show-detail-section h1 {
+    background-color: #efefef;
+    color: #000000;
+}  */
+/* 
+.showDetail {
     background-color: #efefef;
     border-radius: 5px;
     color: #000000;
     padding: 30px 40px;
-}
+} */
 
-#record-show label {
-    margin: auto;
+/* .showDetailButton {
     background-color: #efefef;
-    color: #000000;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
+    display: block;
+} */
+
+/* @media screen and (min-width: 400px) {
+    .showDetail {
+        display: block;
+        width: 50%;
+    }
+    .show-detail-section {
+        padding: 5px;
+    }
+
+    .show-detail-section input {
+        width: 50%;
+    }
+
+    .show-detail-section textarea {
+        display: block;
+        width: 100%;
+    }
 }
 
-#record-show p {
-    margin: auto;
-    background-color: #efefef;
-    color: #000000;
-    text-align: right;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.deleteButton {
-    background-color: #efefef;
-    color: #000000;
-}
-
-.editButton {
-    background-color: #efefef;
-    color: #000000;
-}
-
-button {
-    background-color: #efefef;
-    color: #000000;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.deleteButton:hover {
-    border: solid 5px #000000;
-    color: #000000;
-    padding: 5px;
-}
+@media screen and (min-width: 320px) {
+    .show-detail-section {
+        text-align: center;
+    }
+} */

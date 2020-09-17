@@ -1,26 +1,22 @@
-.record-show {
+.edit-record-show {
+    background-color: #efefef;
+    color: #000000;
+    margin: auto;
+}
+
+.edit-record-show {
     background-color: #efefef;
     color: #000000;
 }
 
-.record-show form {
-    background-color: #efefef;
-    color: #000000;
-}
-
-.record-show button:hover {
-    border: solid 1px #000000;
-    padding: 5px;
-}
-
-.form-section {
+.edit-show-section {
     text-align: left;
     padding: 10px;
     border-radius: 0px;
     margin: 0px;
 }
 
-.record-show h1 {
+.edit-record-show h1 {
     background-color: #efefef;
     color: #000000;
     margin: 0px;

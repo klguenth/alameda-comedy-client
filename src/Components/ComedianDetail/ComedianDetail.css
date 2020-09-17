@@ -1,34 +1,29 @@
-#record-comic {
+.record-comic {
     margin: 10px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-}
-
-.form-section {
-    text-align: left;
-    padding: 5px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.comedianItem button {
-    border: 1px solid #000000;
-    border-radius: 5px;
+    width: 50%;
     background-color: #efefef;
     color: #000000;
 }
 
-.comedianItem button:hover {
-    border: solid 1px #000000;
-    color: #efefef;
-    padding: 5px;
+.comic-detail-section {
+    background-color: #efefef;
+    color: #000000;
 }
 
-.detailButton {
+.comic-detail-section label {
+    text-align: right;
+    background-color: #efefef;
+    color: #000000;
+}
+
+.comic-detail-section span {
+    text-align: left;
+    background-color: #efefef;
+    color: #000000;
+}
+
+.comedianHeader {
     background-color: #efefef;
     color: #000000;
 }

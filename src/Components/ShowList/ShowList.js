@@ -67,7 +67,7 @@ class ShowList extends React.Component {
             <h3 className="showHeader">Show Title: </h3>{show.title}<br />
             <h3 className="showHeader">Show Date: </h3>{show.show_date.slice(0, 10)}<br />
             <h3 className="showHeader">Show Time: </h3>{show.show_time}<br />
-            <div className="controls">
+            <div className="showListControls">
               <button><Link to={`/showDetail/${show.id}`} className='detailButton' aria-label='detail button'>Details</Link></button>
               <button><Link to={`/editShow/${show.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
             </div>
@@ -78,7 +78,7 @@ class ShowList extends React.Component {
             {defaultValue => (
               <div>
                 <Nav />
-                <main role="main" className="listMain">
+                <main role="main" className="showListMain">
                   <header role="banner">
                     <h1>Shows</h1>
                   </header>

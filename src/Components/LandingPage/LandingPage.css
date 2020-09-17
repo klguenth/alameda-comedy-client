@@ -1,6 +1,3 @@
-* {
-    box-sizing: border-box;
-}
 
 .landingContainer {
     display: flex;
@@ -59,7 +56,7 @@
     float: center;
 }
 
-label {
+/* label {
     display: inline-block;
     float: left;
     clear: left;
@@ -69,14 +66,7 @@ label {
 input {
   display: inline-block;
   float: left;
-}
-
-button:hover {
-    background-color: #cdcdcd;
-    color: #000000;
-    transition: .3s ease-in;
-    border: 1px solid #000000;
-}
+} */
 
 @media screen and (min-width: 400px) {
     .landingContainer {

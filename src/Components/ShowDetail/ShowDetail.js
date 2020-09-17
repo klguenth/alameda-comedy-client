@@ -45,86 +45,88 @@ export default class ShowDetail extends React.Component {
         return (
             <ApiContext.Consumer>
                 {defaultValue => (
-                    <div className="show">
-                    <section className="record-show">
-                        <form id="record-show">
-                            <h1 className="form-section-title">Show Details</h1>
-                            <div className="form-section">
+                    <div>
+                    <section className="showDetail">
+                        <form>
+                            <h1 className="show-detail-section">Show Details</h1>
+                            <div className="show-detail-section">
                                 <label htmlFor="title">Title:</label>
-                                <p>{defaultValue=show.title}</p>
+                                <span>{defaultValue=show.title}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="show_date">Date:</label>
-                                <p>{defaultValue=show.show_date.slice(0, 10)}</p>
+                                <span>{defaultValue=show.show_date.slice(0, 10)}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="show_time">Time:</label>
-                                <p>{defaultValue=show.show_time}</p>
+                                <span>{defaultValue=show.show_time}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="comics">Comics:</label>
-                                <p>{defaultValue=show.comics}</p>
+                                <span>{defaultValue=show.comics}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                             <label htmlFor="stage">Stage:</label>
-                                <select name="stage" id="stage">
+                                <select name="stage">
                                     <option value="patio">patio</option>
                                     <option value="showroom">showroom</option>
                                 </select>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="details">Details:</label>
-                                <p>{defaultValue=show.details}</p>
+                                <span>{defaultValue=show.details}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="notes">Notes:</label>
-                                <p>{defaultValue=show.notes}</p>
+                                <span>{defaultValue=show.notes}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="price_general">General Price:</label>
-                                <p>{defaultValue=show.price_general}</p>
+                                <span>{defaultValue=show.price_general}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="price_premium">Premium Price:</label>
-                                <p>{defaultValue=show.price_premium}</p>
+                                <span>{defaultValue=show.price_premium}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="capacity">Capacity:</label>
-                                <p>{defaultValue=show.capacity}</p>
+                                <span>{defaultValue=show.capacity}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="comps">Comps:</label>
-                                <p>{defaultValue=show.comps}</p>
+                                <span>{defaultValue=show.comps}</span>
                             </div>
-                    <header>
-                        <h1>Lineup</h1>
-                    </header>
-                            <div className="form-section">
+                            <header>
+                                <h1  className="show-detail-section">Lineup</h1>
+                            </header>
+                            <div className="show-detail-section">
                                 <label htmlFor="comic-name">1. Comic Name</label>
-                                <p>{defaultValue=show.comic_one}</p>
+                                <span>{defaultValue=show.comic_one}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="comic-name">2. Comic Name</label>
-                                <p>{defaultValue=show.comic_two}</p>
+                                <span>{defaultValue=show.comic_two}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="comic-name">3. Comic Name</label>
-                                <p>{defaultValue=show.comic_three}</p>
+                                <span>{defaultValue=show.comic_three}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="comic-name">4. Comic Name</label>
-                                <p>{defaultValue=show.comic_four}</p>
+                                <span>{defaultValue=show.comic_four}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="comic-name">5. Comic Name</label>
-                                <p>{defaultValue=show.comic_five}</p>
+                                <span>{defaultValue=show.comic_five}</span>
                             </div>
-                            <div className="form-section">
+                            <div className="show-detail-section">
                                 <label htmlFor="comic-name">6. Comic Name</label>
-                                <p>{defaultValue=show.comic_six}</p>
+                                <span>{defaultValue=show.comic_six}</span>
                             </div>
-                            <button><Link to={`/editShow/${show.id}`} className="editButton" aria-label="edit button">Edit</Link></button>
-                            <button type="delete" onClick={this.handleDeleteShow} className="deleteButton" aria-label="delete button">Delete</button>
+                            <div className="showDetailButton">
+                                <button><Link to={`/editShow/${show.id}`} className="editButton" aria-label="edit button">Edit</Link></button>
+                                <button type="delete" onClick={this.handleDeleteShow} className="deleteButton" aria-label="delete button">Delete</button>
+                            </div>
                         </form>
                     </section> 
                     </div>
