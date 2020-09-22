@@ -1,28 +1,16 @@
 
-
 .showListMain {
     text-align: center;
     margin: auto;
     width: 50%;
 }
 
-/* .show li {
-    list-style-type: none;
-    background-color: #efefef;
-}
-
-.show ul {
-    justify-content: center;
-    margin: 30px;
-    padding: 0px;
-}
-
-.show {
+.addShowButton a {
     background-color: #efefef;
     color: #000000;
-} */
+}
 
-.addShowButton a {
+.addShowButton {
     background-color: #efefef;
     color: #000000;
 }
@@ -35,15 +23,15 @@
     margin: 10px 0px;
 }
 
-/* .showHeader {
+.showListControls button {
     background-color: #efefef;
     color: #000000;
-    margin-bottom: 7px;
-} */
+}
 
 .showListControls {
     margin-top: 20px;
     background-color: #efefef;
+    color: #000000;
 }
 
 .detailButton {

@@ -112,7 +112,7 @@ export default class AddComedian extends React.Component {
                     <label htmlFor="passed">Passed</label>
                     <input type="radio" name="passed" value="1" id="passed" />
                     <label htmlFor="not-passed">Not Passed</label>
-                    <input type="radio" name="not-passed" value="0" id="not-passed"/>
+                    <input type="radio" name="passed" value="0" id="not-passed"/>
 
                     <label htmlFor="clean">Clean</label><br />
                     <input type="radio" name="clean" value="1" />

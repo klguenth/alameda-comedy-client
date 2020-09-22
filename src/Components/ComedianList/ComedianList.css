@@ -25,13 +25,12 @@
     color: #000000;
 }
 
-/* button {
-    border: 1px solid #C9C9C8;
+.addComedianButton {
     background-color: #efefef;
     color: #000000;
-} */
+}
 
- .detailButtonComedian {
+.detailButtonComedian {
     background-color: #efefef;
     color: #000000;
 }
@@ -41,12 +40,18 @@
     color: #000000;
 }
 
-/* a {
+a {
     background-color: #efefef;
     color: #000000;
-} */
+}
 
 .comicListControls {
     margin-top: 20px;
     background-color: #efefef;
+    color: #000000;
+}
+
+.comicListControls button {
+    background-color: #efefef;
+    color: #000000;
 }

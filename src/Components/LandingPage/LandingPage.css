@@ -56,18 +56,6 @@
     float: center;
 }
 
-/* label {
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-    text-align: right;
-}
-input {
-  display: inline-block;
-  float: left;
-} */
-
 @media screen and (min-width: 400px) {
     .landingContainer {
         text-align: center;

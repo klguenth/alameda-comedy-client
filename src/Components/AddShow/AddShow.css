@@ -23,8 +23,7 @@
     background-color: #efefef;
     color: #000000;
     float: left;
-    clear: left;
-    width: 250px;
+    width: 30%;
     text-align: right;
     margin-top: 5px;
 }
@@ -33,7 +32,7 @@
     background-color: #efefef;
     color: #000000;
     float: left;
-    width: 30%;
+    width: 60%;
     margin-top: 5px;
     margin-left: 5px;
 }
@@ -43,7 +42,7 @@
     background-color: #efefef;
     color: #000000;
     margin-top: 5px;
-    width: 30%;
+    width: 60%;
     margin-left: 5px;
 }
 
@@ -51,26 +50,45 @@
     float: left;
     background-color: #efefef;
     color: #000000;
-    width: 30%;
+    width: 60%;
     margin-top: 5px;
     margin-left: 5px;
 } 
-/* 
-@media screen and (min-width: 400px) {
-    .newShowSection {
-        padding: 5px;
+
+ @media screen and (max-width: 520px) {
+
+    .new-show {
+        margin: auto;
+        width: 100%;
+        background-color: #efefef;
+        color: #000000;
+        height: 100%;
     }
 
-    .newShowSection input {
-        width: 50%;
+    .new-show label {
+        float: left;
+        clear: both;
+        text-align: left;
+        margin: 5px;
+        width: auto;
     }
 
-    .newShowSection textarea {
-        display: block;
-        width: 50%;
+    .new-show input {
+        float: left;
+        width: 90%;
+        margin: 5px;
     }
-}
 
-@media screen and (min-width: 320px) {
+    .new-show textarea {
+        float: left;
+        width: 90%;
+        margin: 5px;
+    } 
 
-}  */
+    .new-show select {
+        float: left;
+        margin-top: 5px;
+        width: 90%;
+        margin: 5px;
+    }
+}   

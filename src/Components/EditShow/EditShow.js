@@ -102,95 +102,73 @@ export default class EditShow extends React.Component {
         return (
             <ApiContext.Consumer>
                 {defaultValue => (
-                    <div className="record-show-main">
-                        <header>
-                            <h1>Edit Show</h1>
-                        </header>
-                        <section className="edit-record-show">
-                            <form onSubmit={this.handleEditShow}>
-                                <div className="edit-show-section">
+                            <form onSubmit={this.handleEditShow} className="record-show-main">
+                                <h1 className="editHeader">Edit Show</h1>
                                     <label htmlFor="title">Title</label>
                                     <input type="text" id="title" name="title" defaultValue={show.title} required />
-                                </div>
-                                <div className="edit-show-section">
+   
                                     <label htmlFor="show_date">Date</label>
                                     <input type="date" id="show_date" name="show_date" min="2020-04-25" max="2050-01-01"
                                         defaultValue={show.show_date.slice(0, 10)} required/>
-                                </div>
-                                <div className="edit-show-section">
+
                                     <label htmlFor="show_time">Time</label>
                                     <input type="time" id="show_time" name="show_time" min="12:00" max="23:00" defaultValue={show.show_time} required/>
-                                </div>
-                                <div className="edit-show-section">
+      
                                     <label htmlFor="comics">Comics</label>
                                     <input type="number" defaultValue={show.comics} name="comics" id="comics"/>
-                                </div>
-                                <div className="edit-show-section">
-                                <label htmlFor="stage">Stage</label>
-                                    <select name="stage" id="stage" defaultValue={show.stage}>
-                                        <option value="patio">patio</option>
-                                        <option value="showroom">showroom</option>
-                                    </select>
-                                </div>
-                                <div className="edit-show-section">
+                          
+                                    <label htmlFor="stage">Stage</label>
+                                        <select name="stage" id="stage" defaultValue={show.stage}>
+                                            <option value="patio">patio</option>
+                                            <option value="showroom">showroom</option>
+                                        </select>
+                       
                                     <label htmlFor="details">Details</label>
                                     <input type="text" id="details" name="details" defaultValue={show.details} required />
-                                </div>
-                                <div className="edit-show-section">
+   
                                     <label htmlFor="notes">Notes</label>
                                     <textarea name="notes" rows="10" id="notes" defaultValue={show.notes} required></textarea>
-                                </div>
-                                <div className="edit-show-section">
+
                                     <label htmlFor="price_general">General Price</label>
                                     <input type="number" min="1" step="any" name="price_general" id="price_general"
                                         defaultValue={Number(show.price_general.slice(1))} />
-                                </div>
-                                <div className="edit-show-section">
+                         
                                     <label htmlFor="price_premium">Premium Price</label>
                                     <input type="number" min="1" step="any" name="price_premium" id="price_premium"
                                         defaultValue={Number(show.price_premium.slice(1))} />
-                                </div>
-                                <div className="edit-show-section">
+                            
                                     <label htmlFor="capacity">Capacity</label>
                                     <input type="number" min="1" step="any" name="capacity" id="capacity" defaultValue={show.capacity} />
-                                </div>
-                                <div className="edit-show-section">
+                            
                                     <label htmlFor="comps">Comps</label>
                                     <input type="number" min="1" step="any" name="comps" id="comps" defaultValue={show.comps} />
-                                </div>
-                                <header>
-                                    <h1 className="lineupHeader">Lineup</h1>
-                                </header>
-                                    <div className="edit-show-section">
+  
+                                    <h1 className="editHeader">Lineup</h1>
+   
                                         <label htmlFor="comic_one">1. Comic Name</label>
                                         <input type="text" name="comic_one" defaultValue={show.comic_one} />
-                                    </div>
-                                    <div className="edit-show-section">
+                
                                         <label htmlFor="comic_two">2. Comic Name</label>
                                         <input type="text" name="comic_two" defaultValue={show.comic_two} />
-                                    </div>
-                                    <div className="edit-show-section">
+                                  
                                         <label htmlFor="comic_three">3. Comic Name</label>
                                         <input type="text" name="comic_three" defaultValue={show.comic_three} />
-                                    </div>
-                                    <div className="edit-show-section">
+         
                                         <label htmlFor="comic_four">4. Comic Name</label>
                                         <input type="text" name="comic_four" defaultValue={show.comic_four} />
-                                    </div>
-                                    <div className="edit-show-section">
+                              
                                         <label htmlFor="comic_five">5. Comic Name</label>
                                         <input type="text" name="comic_five" defaultValue={show.comic_five} />
-                                    </div>
-                                    <div className="edit-show-section">
+                               
                                         <label htmlFor="comic_six">6. Comic Name</label>
                                         <input type="text" name="comic_six" defaultValue={show.comic_six} />
+                              
+                                    <div className="editShowControls">
+                                        <button type="reset">Reset</button>
+                                        <button type="submit">Submit</button>
+                                        <button type="delete" onClick={this.handleDeleteShow}>Delete</button>
                                     </div>
-                                <button type="reset">Reset</button>
-                                <button type="submit">Submit</button>
-                                <button type="delete" onClick={this.handleDeleteShow}>Delete</button>
                             </form>
-                        </section>
-                    </div>
                 )}
             </ApiContext.Consumer>
         );

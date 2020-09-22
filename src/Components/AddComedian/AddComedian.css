@@ -13,17 +13,6 @@
     border-radius: 5px;
 }
 
-.addComicControls button {
-    background-color: #efefef;
-    color: #000000;
-}
-
-.newComicSection {
-    clear: both;
-    background-color: #efefef;
-    color: #000000;
-}
-
 .new-comic label {
     background-color: #efefef;
     color: #000000;
@@ -61,22 +50,46 @@
     margin-left: 5px;
 } 
 
-/* 
-@media screen and (min-width: 400px) {
-    .newShowSection {
-        padding: 5px;
-    }
-
-    .newShowSection input {
-        width: 50%;
-    }
-
-    .newShowSection textarea {
-        display: block;
-        width: 50%;
-    }
+.addComicControls button {
+    background-color: #efefef;
+    color: #000000;
 }
 
-@media screen and (min-width: 320px) {
 
-}  */
+@media screen and (max-width: 520px) {
+
+    .new-comic {
+        margin: auto;
+        width: 100%;
+        background-color: #efefef;
+        color: #000000;
+        height: 100%;
+    }
+
+    .new-comic label {
+        float: left;
+        clear: both;
+        text-align: left;
+        margin: 5px;
+        width: auto;
+    }
+
+    .new-comic input {
+        float: left;
+        width: 90%;
+        margin: 5px;
+    }
+
+    .new-comic textarea {
+        float: left;
+        width: 90%;
+        margin: 5px;
+    } 
+
+    .new-comic select {
+        float: left;
+        margin-top: 5px;
+        width: 90%;
+        margin: 5px;
+    }
+}   
