@@ -68,13 +68,14 @@
     .new-show label {
         float: left;
         clear: both;
-        text-align: left;
+        text-align: right;
         margin: 5px;
         width: auto;
     }
 
     .new-show input {
         float: left;
+        text-align: right;
         width: 90%;
         margin: 5px;
     }

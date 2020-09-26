@@ -12,6 +12,11 @@
     width: 40%;
 }
 
+.comedianInfo {
+    background-color: #efefef;
+    color: #000000;
+}
+
 .comedianItem {
     background-color: #efefef;
     border-radius: 5px;

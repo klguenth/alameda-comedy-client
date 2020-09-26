@@ -56,7 +56,7 @@
 }
 
 
-@media screen and (max-width: 520px) {
+@media screen and (min-width: 280px) {
 
     .new-comic {
         margin: auto;

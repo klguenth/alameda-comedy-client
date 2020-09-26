@@ -65,7 +65,7 @@
     color: #000000;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (min-width: 280px) {
 
     .record-comic {
         margin: auto;

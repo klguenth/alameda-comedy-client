@@ -91,7 +91,10 @@ export default class LandingPage extends React.Component {
                     : res.json()
             })
             .then(newUser => {
-                this.props.history.push('/')
+                //Alert for successful login/redirection?
+                //Clear fields after login/signup?
+                this.props.setLoggedIn();
+                this.props.history.push('/showList')
             })
             .catch(error => {
                 this.setState({
@@ -129,20 +132,20 @@ export default class LandingPage extends React.Component {
                         <label htmlFor="email">Email</label>
                         <input type="email" name="email" className="email" /><br />
                         <label htmlFor="pw">Password</label>
-                        <input type="password" name="pw" className="pw" /><br />
+                        <input type="password" name="pw" className="pw" />
                         <button type="submit" className="loginButton">Sign Up</button>
                     </form>
-                    <p>{registerError}</p>
+                    <p className="registerError">{registerError}</p>
                     <h2>Login</h2>
                     <form onSubmit={this.handleSubmitAuth} className='login-form'>
                         <label htmlFor="email">Email</label>
                         <input type="email" name="email" className="email" /><br />
                         <label htmlFor="pw">Password</label>
-                        <input type="password" name="pw" className="pw" /><br />
+                        <input type="password" name="pw" className="pw" />
                         <button type="submit" className="loginButton">Login</button>
                     </form>
                     <p>Following succesful login, the navigation bar will appear at the top of the page.</p>
-                    <p>{loginError}</p>
+                    <p className="loginError">{loginError}</p>
                 </section>
         }
         return (

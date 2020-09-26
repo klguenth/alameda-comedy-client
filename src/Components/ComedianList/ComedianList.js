@@ -51,11 +51,11 @@ export default class ComedianList extends React.Component {
         let comedian = this.state.comedians.map((comedian,index) => 
             <li key={index} className="comedianItem">
                 
-                <h4 className="comedianHeader">Name: </h4>{comedian.first_name}
+                <h4 className="comedianHeader">Name: </h4><div className="comedianInfo">{comedian.first_name}
                 {' '}
-                {comedian.last_name}<br />
-                <h4 className="comedianHeader">Phone: </h4>{comedian.phone}<br />
-                <h4 className="comedianHeader">Email: </h4>{comedian.email}<br />
+                {comedian.last_name}</div><br />
+                <h4 className="comedianHeader">Phone: </h4><div className="comedianInfo">{comedian.phone}</div><br />
+                <h4 className="comedianHeader">Email: </h4><div className="comedianInfo">{comedian.email}</div><br />
                 <div className="comicListControls">
                   <button><Link to={`/comedianDetail/${comedian.id}`} className='detailButtonComedian' aria-label='detail button'>Details</Link></button>
                   <button><Link to={`/editComedian/${comedian.id}`} className='editButton' aria-label='edit button'>Edit</Link></button>
